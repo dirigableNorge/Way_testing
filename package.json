@@ -1,0 +1,23 @@
+{
+  "name": "way_testing",
+  "version": "1.0.0",
+  "description": "grade task",
+  "main": "gulpfire.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dirigableNorge/Way_testing.git"
+  },
+  "keywords": [
+    "adaptive",
+    "layout"
+  ],
+  "author": "T.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dirigableNorge/Way_testing/issues"
+  },
+  "homepage": "https://github.com/dirigableNorge/Way_testing#readme"
+}

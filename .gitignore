@@ -6,6 +6,7 @@
 *.pdf
 *.psd
 *.sublime*
+*.code-workspace
 build/
 layouts/
 node_modules/
