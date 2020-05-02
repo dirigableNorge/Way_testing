@@ -33,10 +33,6 @@ img {
   max-width: 100%;
 }
 
-.hidden {
-  display: none;
-}
-
 @import "blocks/wrapper.scss";
 @import "blocks/button.scss";
 @import "blocks/tabs";
@@ -44,7 +40,12 @@ img {
 @import "blocks/page-main.scss";
 @import "blocks/places.scss";
 @import "blocks/countries";
+@import "blocks/prices.scss";
 @import "blocks/page-footer.scss";
 @import "blocks/next-travel.scss";
 @import "blocks/contacts.scss";
 @import "blocks/corp-offer.scss";
+
+.hidden {
+  display: none;
+}
