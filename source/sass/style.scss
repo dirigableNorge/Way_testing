@@ -1,3 +1,16 @@
+@import "fonts.scss";
+@import "variables.scss";
+@import "colours.scss";
+@import "visually-hidden.scss";
+
 body {
   margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Montserrat", "Arial", sans-serif;
 }
+
+@import "blocks/page-header.scss";
+@import "blocks/page-main.scss";
+@import "blocks/page-footer.scss";
