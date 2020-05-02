@@ -1,0 +1,35 @@
+.page-footer__wrapper {
+  display: flex;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+
+.page-footer article:not(:last-child) {
+  position: relative;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 1px;
+    height: 100%;
+
+    background-color: $grey;
+  }
+}
+
+.page-footer__next-travel {
+  width: 390px;
+}
+
+.page-footer__contacts {
+  width: 300px;
+}
+
+.page-footer__corp-offer {
+  width: 340px;
+}

@@ -1,0 +1,22 @@
+.corp-offer {
+  padding-left: 50px;
+  box-sizing: content-box;
+}
+
+.corp-offer__title {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  color: $really-dark;
+}
+
+.corp-offer__text {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba($really-dark, 0.5);
+}

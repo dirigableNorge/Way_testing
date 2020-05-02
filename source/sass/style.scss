@@ -7,6 +7,12 @@ html {
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
 
@@ -27,8 +33,15 @@ img {
   max-width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 @import "blocks/wrapper.scss";
 @import "blocks/button.scss";
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
 @import "blocks/page-footer.scss";
+@import "blocks/next-travel.scss";
+@import "blocks/contacts.scss";
+@import "blocks/corp-offer.scss";
