@@ -99,5 +99,5 @@ gulp.task('build', gulp.series('clean', 'copy', 'css', 'css-min', 'copy-html', '
 gulp.task('start', gulp.series('build', 'server'));
 
 
-gulp.task('dev-build', gulp.series('css', 'css-min', 'copy-html', 'js-min'));
+gulp.task('dev-build', gulp.series('css', 'css-min', 'copy', 'copy-html', 'js-min'));
 gulp.task('dev-start', gulp.series('dev-build', 'server'));

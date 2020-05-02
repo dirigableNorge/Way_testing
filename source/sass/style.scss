@@ -9,8 +9,16 @@ body {
   font-weight: 400;
   font-size: 16px;
   font-family: "Montserrat", "Arial", sans-serif;
+  color: black;
+
+  background-color: white;
 }
 
+a {
+  text-decoration: none;
+}
+
+@import "blocks/wrapper.scss";
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
 @import "blocks/page-footer.scss";
