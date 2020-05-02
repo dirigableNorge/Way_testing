@@ -1,11 +1,13 @@
+.countries {
+  margin-bottom: 240px;
+}
+
 .countries__wrapper {
   margin: 0 auto;
 }
 
-
-
 .countries__tabs {
-
+  margin-bottom: 80px;
 }
 
 .countries__list {
@@ -15,13 +17,92 @@
   list-style: none;
 }
 
+.countries__item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .countries__item-title {
   margin: 0;
-  margin-bottom: 65px;
-  max-width: 350px;
+  margin-bottom: 55px;
+  max-width: 370px;
 
   font-weight: 600;
   font-size: 55px;
   line-height: 80px;
+  color: $dark;
+}
+
+.countries__item-text {
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  width: 370px;
+
+  line-height: 28px;
+  color: rgba($dark, 0.7);
+}
+
+.countries__item-button {
+  width: 250px;
+  padding: 30px 40px;
+
+  cursor: pointer;
+}
+
+.countries__item-image {
+  position: absolute;
+  top: 0;
+  left: 470px;
+}
+
+.countries__review {
+  position: absolute;
+  top: 114px;
+  right: 0;
+
+  width: 380px;
+  padding: 30px;
+
+  background-color: white;
+}
+
+.countries__review-title {
+  margin: 0;
+  margin-bottom: 30px;
+
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+  color: $dark;
+}
+
+.countries__review-text {
+  margin: 0;
+  margin-bottom: 35px;
+
+  font-size: 14px;
+  line-height: 28px;
+  color: rgba($dark, 0.7);
+}
+
+.countries__review-author {
+  display: flex;
+  align-items: center;
+}
+
+.countries__review-author-image {
+  margin-right: 16px;
+  border-radius: 50%;
+}
+
+.countreis__review-author-name {
+  margin: 0;
+
+  font-weight: 500;
+  line-height: 24px;
   color: $dark;
 }
