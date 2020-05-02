@@ -1,0 +1,23 @@
+.button {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+
+  border: 0 none;
+  background-color: $main-accent;
+
+  &:hover,
+  &:focus {
+    background-color: $main-accent-hover;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

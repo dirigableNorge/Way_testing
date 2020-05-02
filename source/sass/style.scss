@@ -3,6 +3,10 @@
 @import "colours.scss";
 @import "visually-hidden.scss";
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 
@@ -18,7 +22,13 @@ a {
   text-decoration: none;
 }
 
+img {
+  border-style: none;
+  max-width: 100%;
+}
+
 @import "blocks/wrapper.scss";
+@import "blocks/button.scss";
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
 @import "blocks/page-footer.scss";
