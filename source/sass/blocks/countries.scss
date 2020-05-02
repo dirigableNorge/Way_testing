@@ -1,0 +1,27 @@
+.countries__wrapper {
+  margin: 0 auto;
+}
+
+
+
+.countries__tabs {
+
+}
+
+.countries__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.countries__item-title {
+  margin: 0;
+  margin-bottom: 65px;
+  max-width: 350px;
+
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 80px;
+  color: $dark;
+}
