@@ -202,15 +202,18 @@
       </section>
     </div>
     <section class="page-main__call-us call-us">
-      <div class="call-us_wrapper">
-        <h2 class="call-us__title">У Вас остались вопросы?</h2>
-        <small class="call-us__tip">Оставьте свой номер или e-mail и мы свяжемся с Вами</small>
+      <h2 class="visually-hidden">Обратная связь</h2>
+      <div class="wrapper call-us__wrapper">
         <form action="" class="call-us__form" method="POST" id="call-us">
-          <label for="callUsTelephone" class="call-us__label">Телефон</label>
-          <input type="text" class="call-us__input" placeholder="+7 Введите 10 цифр номера" id="callUsTelephone">
-          <label for="callUsEmail" class="call-us__label">Электронная почта</label>
-          <input type="text" class="call-us__input" placeholder="E-mail" id="callUsEmail">
-          <button class="call-us__submit-button">отправить</button>
+          <legend class="call-us__title">У Вас остались вопросы?</legend>
+          <small class="call-us__tip">Оставьте свой номер или e-mail и мы свяжемся с Вами</small>
+          <div class="call-us__fieldset">
+            <label class="call-us__label visually-hidden" for="callUsTelephone">Телефон</label>
+            <input type="text" class="call-us__input" placeholder="+7 Введите 10 цифр номера" id="callUsTelephone">
+            <label class="call-us__label visually-hidden" for="callUsEmail">Электронная почта</label>
+            <input type="text" class="call-us__input" placeholder="E-mail" id="callUsEmail">
+          </div>
+          <button class="button call-us__submit-button">отправить</button>
         </form>
       </div>
     </section>
