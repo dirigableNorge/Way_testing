@@ -31,6 +31,37 @@
   color: $dark-new;
 }
 
+.buy-tour-modal__label--required {
+  position: relative;
+
+  align-self: start;
+
+  font-size: 0;
+  line-height: 0;
+  text-align: left;
+
+  &::before {
+    content: "*";
+
+    position: absolute;
+    top: 20px;
+    left: 0;
+
+    font-size: 16px;
+    line-height: 16px;
+    color: $main-accent;
+  }
+
+  &::after {
+    content: "+7";
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 17px;
+    color: $really-dark;
+  }
+}
+
 .buy-tour-modal__input {
   width: 270px;
   margin-bottom: 20px;
@@ -38,4 +69,6 @@
 
 .buy-tour-modal__submit-button {
   padding: 18px 40px;
+
+  cursor: pointer;
 }

@@ -14,6 +14,8 @@
 }
 
 .prices__title {
+  position: relative;
+
   margin: 0;
   margin-bottom: 55px;
   max-width: 350px;
@@ -22,6 +24,19 @@
   font-size: 55px;
   line-height: 80px;
   color: $dark;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+
+    width: 175px;
+    height: 3px;
+
+    background-color: $main-accent;
+  }
 }
 
 .prices__text {
@@ -44,10 +59,22 @@
 }
 
 .prices__phone {
+  position: relative;
+
+  padding-left: 43px;
+
   font-size: 20px;
   line-height: 32px;
 
   color: black;
+}
+
+.prices__phone-icon {
+  position: absolute;
+  top: 2px;
+  left: 0;
+
+  fill: white;
 }
 
 .prices__list {
@@ -79,6 +106,10 @@
 
   .prices__item-title {
     color: $main-accent;
+  }
+
+  .prices__services-item-icon {
+    fill: $really-dark;
   }
 }
 
@@ -116,10 +147,21 @@
 }
 
 .prices__services-item {
+  position: relative;
+
   margin-bottom: 15px;
+  padding-left: 30px;
 
   line-height: 32px;
   color: $dark;
+}
+
+.prices__services-item-icon {
+  position: absolute;
+  top: 5px;
+  left: 0;
+
+  fill: $main-accent;
 }
 
 .prices__buy-now-button {

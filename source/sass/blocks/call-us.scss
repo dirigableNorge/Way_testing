@@ -47,6 +47,19 @@
   color: $really-dark;
 }
 
+.call-us__label-required {
+  position: relative;
+
+  font-size: 0;
+  line-height: 0;
+}
+
+.call-us__label-required-icon {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+}
+
 .call-us__input {
   width: 269px;
   margin-bottom: 25px;

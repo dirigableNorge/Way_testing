@@ -45,18 +45,35 @@
 }
 
 .page-header__phone-us {
-  margin-left: 60px;
+  position: relative;
 
+  margin-left: 60px;
+  padding-left: 28px;
+
+  font-size: 18px;
+  line-height: 32px;
   color: $main-accent;
 
   &:hover,
   &:focus {
     color: $main-accent-hover;
+
+    .page-header__phone-us-icon {
+      stroke: $main-accent-hover;
+    }
   }
 
   &:active {
     opacity: 0.7;
   }
+}
+
+.page-header__phone-us-icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+
+  fill: white;
 }
 
 .page-header__bottom {
@@ -98,6 +115,18 @@
 }
 
 .page-header__next-button {
+  position: relative;
+
   width: 340px;
   padding: 30px 40px;
+
+  font-weight: 700;
+}
+
+.page-header__next-button-icon {
+  position: absolute;
+  top: 31px;
+  right: 40px;
+
+  fill: transparent;
 }

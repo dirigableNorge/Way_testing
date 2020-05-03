@@ -7,6 +7,7 @@
 }
 
 .places__title {
+  position: relative;
   margin: 0;
   margin-bottom: 65px;
   max-width: 350px;
@@ -15,6 +16,19 @@
   font-size: 55px;
   line-height: 80px;
   color: $dark;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+
+    width: 228px;
+    height: 4px;
+
+    background-color: $main-accent;
+  }
 }
 
 .places__tip {

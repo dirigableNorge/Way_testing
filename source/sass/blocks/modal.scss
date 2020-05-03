@@ -11,4 +11,27 @@
   position: absolute;
   top: 20px;
   right: 20px;
+
+  padding: 0;
+
+  font-size: 0;
+  line-height: 0;
+
+  border: 0 none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    .modal__close-button-icon {
+      fill: none;
+      stroke: $really-dark;
+    }
+  }
+}
+
+.modal__close-button-icon {
+  fill: none;
+  stroke: rgba($really-dark, 0.2);
 }
