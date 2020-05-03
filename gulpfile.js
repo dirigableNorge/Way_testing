@@ -5,12 +5,15 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const csso = require('gulp-csso');
-const server = require('browser-sync').create();
-const rename = require('gulp-rename');
+const posthtml = require('gulp-posthtml');
+const include = require('posthtml-include');
+const htmlmin = require('gulp-htmlmin');
 const uglify = require('gulp-uglify');
 const svgo = require('gulp-svgo');
 const svgstore = require('gulp-svgstore');
+const rename = require('gulp-rename');
 const del = require('del');
+const server = require('browser-sync').create();
 
 gulp.task('css', () => {
   return gulp
@@ -53,7 +56,6 @@ gulp.task('copy', function() {
   return gulp
     .src(
       [
-        'source/*.html',
         'source/img/**/*{png,jpg}',
         'source/fonts/**/*.{woff,woff2}',
         'source/*.ico'
@@ -65,16 +67,11 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('copy-html', function() {
+gulp.task('html', function() {
   return gulp
-    .src(
-      [
-        'source/*.html',
-      ],
-      {
-        base: 'source'
-      }
-    )
+    .src('source/*.html')
+    .pipe(posthtml([include()]))
+    .pipe(htmlmin())
     .pipe(gulp.dest('build'));
 });
 
@@ -112,13 +109,13 @@ gulp.task('server', () => {
   });
 
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css', 'css-min'));
-  gulp.watch('source/*.html', gulp.series('copy-html', 'refresh'));
+  gulp.watch('source/*.html', gulp.series('html', 'refresh'));
   gulp.watch("source/js/*.js", gulp.series('js-min', 'refresh'));
 });
 
-gulp.task('build', gulp.series('clean', 'copy', 'css', 'css-min', 'copy', 'js-min', 'svgo', 'svg-sprite'));
+gulp.task('build', gulp.series('clean', 'copy', 'css', 'css-min', 'js-min', 'svgo', 'svg-sprite', 'html'));
 gulp.task('start', gulp.series('build', 'server'));
 
 
-gulp.task('dev-build', gulp.series('css', 'css-min', 'copy-html', 'js-min'));
+gulp.task('dev-build', gulp.series('css', 'css-min', 'html', 'js-min'));
 gulp.task('dev-start', gulp.series('dev-build', 'server'));
