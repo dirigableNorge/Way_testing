@@ -50,22 +50,9 @@
 .call-us__input {
   width: 269px;
   margin-bottom: 25px;
-  padding: 15px;
-
-  font-size: 14px;
-  line-height: 17px;
-  color: $really-dark;
-
-  border: 1px solid rgba($dark, 0.3);
 
   &:not(:nth-child(2n)) {
     margin-right: 19px;
-  }
-
-  &::placeholder {
-    font-size: 14px;
-    line-height: 17px;
-    color: $really-dark;
   }
 }
 

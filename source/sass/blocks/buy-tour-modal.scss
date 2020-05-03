@@ -1,0 +1,41 @@
+.buy-tour-modal {
+  display: flex;
+  justify-content: flex-end;
+  width: 728px;
+
+  background-image: url("../img/buy-tour-background.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 338px auto;
+}
+
+.buy-tour-modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 390px;
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.buy-tour-modal__title {
+  flex-grow: 1;
+  margin: 0;
+  margin-bottom: 50px;
+
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 43px;
+  text-align: center;
+  color: $dark-new;
+}
+
+.buy-tour-modal__input {
+  width: 270px;
+  margin-bottom: 20px;
+}
+
+.buy-tour-modal__submit-button {
+  padding: 18px 40px;
+}

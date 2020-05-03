@@ -36,6 +36,8 @@ img {
 @import "blocks/wrapper.scss";
 @import "blocks/button.scss";
 @import "blocks/tabs";
+@import "blocks/input-text.scss";
+@import "blocks/modal";
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
 @import "blocks/places.scss";
@@ -46,6 +48,7 @@ img {
 @import "blocks/contacts.scss";
 @import "blocks/call-us.scss";
 @import "blocks/corp-offer.scss";
+@import "blocks/buy-tour-modal.scss";
 
 .hidden {
   display: none;

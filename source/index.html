@@ -209,12 +209,16 @@
           <small class="call-us__tip">Оставьте свой номер или e-mail и мы свяжемся с Вами</small>
           <div class="call-us__fieldset">
             <label class="call-us__label visually-hidden" for="callUsTelephone">Телефон</label>
-            <input type="text" class="call-us__input" placeholder="+7 Введите 10 цифр номера" id="callUsTelephone">
+            <input class="input-text call-us__input" type="text" placeholder="+7 Введите 10 цифр номера" id="callUsTelephone" required>
             <label class="call-us__label visually-hidden" for="callUsEmail">Электронная почта</label>
-            <input type="text" class="call-us__input" placeholder="E-mail" id="callUsEmail">
+            <input class="input-text call-us__input" type="text" placeholder="E-mail" id="callUsEmail">
           </div>
           <button class="button call-us__submit-button">отправить</button>
         </form>
+        <div class="call-us__feedback hidden">
+          <button class="call-us__feedback-close-button">Close</button>
+          <p class="call-us__feedback-message">Форма успешно отправлена, спасибо! :)</p>
+        </div>
       </div>
     </section>
   </main>
@@ -251,16 +255,19 @@
       </article>
     </div>
   </footer>
-  <article class="modal buy-tour-modal hidden">
-    <button class="modal__close-button">Closse</button>
-    <h2 class="buy-tour-modal__title"></h2>
-    <form action="" class="but-tour-modal__form" method="POST">
-      <label for="buyTourTelephone" class="buy-tour-modal__label">Телефон</label>
-        <input type="text" class="buy-tour-modal__input" placeholder="+7 Введите 10 цифр номера" id="buyTourTelephone">
-        <label for="buyTourEmail" class="buy-tour-modal__label">Электронная почта</label>
-        <input type="text" class="buy-tour-modal__input" placeholder="E-mail" id="buyTourEmail">
-        <button class="buy-tour-modal__submit-button">отправить</button>
+  <article class="modal buy-tour-modal">
+    <button class="modal__close-button">Close</button>
+    <form action="" class="buy-tour-modal__form" method="POST">
+      <h2 class="buy-tour-modal__title">Купить тур</h2>
+      <label class="buy-tour-modal__label visually-hidden" for="buyTourTelephone">Телефон</label>
+      <input class="input-text buy-tour-modal__input" type="text" placeholder="+7 Введите 10 цифр номера" id="buyTourTelephone" required>
+      <label class="buy-tour-modal__label visually-hidden" for="buyTourEmail">Электронная почта</label>
+      <input class="input-text buy-tour-modal__input" type="text" placeholder="E-mail" id="buyTourEmail">
+      <button class="button buy-tour-modal__submit-button">отправить</button>
     </form>
+    <div class="buy-tour-modal__feedback hidden">
+      <p class="buy-tour-modal__feedback-message">Форма успешно отправлена, спасибо! :)</p>
+    </div>
   </article>
 </body>
 </html>

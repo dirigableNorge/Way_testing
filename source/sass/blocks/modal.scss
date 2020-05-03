@@ -1,0 +1,14 @@
+.modal {
+  position: fixed;
+  top: 200px;
+  left: calc(50vw - 364px);
+  z-index: 1000;
+
+  background-color: $background-grey;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
