@@ -4,6 +4,7 @@
 
 .page-header__top-wrapper {
   display: flex;
+  align-items: center;
 
   margin: 0 auto;
   padding-top: 39px;
@@ -12,6 +13,8 @@
 
 .page-header__logo {
   margin-right: auto;
+
+  line-height: 0;
 }
 
 .page-header__nav-toggle-button {
@@ -84,7 +87,6 @@
 }
 
 .page-header__bottom {
-  min-height: 860px;
   color: white;
 
   background-color: black;
@@ -98,6 +100,7 @@
   margin: 0 auto;
   padding-top: 185px;
   padding-left: 700px;
+  padding-bottom: 297px;
 }
 
 .page-header__intro {
@@ -141,6 +144,7 @@
 @media (min-width: $tablet-width) and (max-width: $desktop-width) {
   .page-header__top-wrapper {
     padding: 0;
+    padding-left: 21px;
   }
 
   .page-header__phone-us {
@@ -164,9 +168,63 @@
     position: absolute;
     top: 0;
     right: 0;
+
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    min-height: 568px;
+
+    background-color: white;
   }
 
   .page-header__nav-list--close {
     display: none;
+  }
+
+  .page-header__nav-item {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  .page-header__nav-link {
+    display: block;
+    width: 100%;
+    padding: 17px 16px;
+
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+    color: $dark-new;
+
+    background-color: $background-grey;
+  }
+
+  .page-header__bottom-wrapper {
+    padding: 0;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .page-header__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 400px;
+    margin: 0 auto;
+  }
+
+  .page-header__intro-title {
+    margin-bottom: 15px;
+
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+  }
+
+  .page-header__intro-text {
+    min-width: 100%;
+    margin-bottom: 15px;
+
+    text-align: center;
   }
 }
