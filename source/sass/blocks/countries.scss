@@ -97,7 +97,7 @@
   color: $dark;
 
   &::after {
-    content: "";     
+    content: "";
     position: absolute;
     bottom: -11px;
     left: 0;
@@ -134,4 +134,8 @@
   font-weight: 500;
   line-height: 24px;
   color: $dark;
+}
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  
 }

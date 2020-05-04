@@ -7,3 +7,9 @@
   background-repeat: no-repeat;
   background-position: center top 200px;
 }
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .page-main__united-sections {
+    background-image: none;
+  }
+}

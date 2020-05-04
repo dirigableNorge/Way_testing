@@ -1,12 +1,13 @@
 .tabs {
   display: flex;
-  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 
   list-style: none;
 
   border-bottom: 1px solid rgba($dark, 0.3);
+
+  overflow: hidden;
 }
 
 .tabs__item {
