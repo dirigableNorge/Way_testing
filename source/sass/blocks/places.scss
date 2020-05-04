@@ -62,13 +62,60 @@
 }
 
 .places__link {
-  width: 215px;
-  padding: 17px;
+  position: relative;
 
-  position: absolute;
-  bottom: 0;
-  left: 68px;
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 350px;
+  height: 430px;
+
+  &:hover,
+  &:focus {
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba($really-dark, 0.6);
+    }
+
+    &::after {
+      content: "смотреть подробнее";
+
+      position: absolute;
+      top: 182px;
+      left: calc(50% - 133px);
+      z-index: 2;
+
+      padding: 25px 30px;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: white;
+
+      border: 1px solid rgba(white, 0.7);
+    }
+  }
+}
+
+.places__name {
+  z-index: 3;
+  width: 215px;
+  margin: 0;
+  padding: 17px;
 
   font-weight: 500;
   font-size: 24px;
@@ -77,6 +124,16 @@
   color: $dark;
 
   background-color: white;
+}
+
+.places__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: $tablet-width) and (max-width: $desktop-width) {
