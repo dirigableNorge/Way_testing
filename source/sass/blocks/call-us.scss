@@ -72,3 +72,10 @@
 .call-us__submit-button {
   padding: 18px 40px;
 }
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .call-us__wrapper {
+    background-size: cover;;
+    justify-content: center;
+  }
+}
