@@ -78,3 +78,35 @@
 
   background-color: white;
 }
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .places__title {
+    max-width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .places__tip {
+    max-width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+
+    text-align: center;
+  }
+
+  .places__list {
+    margin-left: -30px;
+    margin-bottom: 80px;
+  }
+
+  .places__item {
+    max-width: 288px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+}
