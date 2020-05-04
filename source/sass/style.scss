@@ -33,11 +33,14 @@ img {
   max-width: 100%;
 }
 
+//reusable blocks
 @import "blocks/wrapper.scss";
 @import "blocks/button.scss";
 @import "blocks/tabs";
 @import "blocks/input-text.scss";
 @import "blocks/modal";
+
+//markup blocks
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
 @import "blocks/places.scss";

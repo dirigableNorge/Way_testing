@@ -21,7 +21,13 @@
           <img src="img/way-logo.png" width="57" height="22" alt="logo image.">
         </a>
         <nav class="page-header__nav">
-          <ul class="page-header__nav-list">
+          <button class="button page-header__nav-toggle-button">
+            <svg class="page-header__nav-toggle-button-icon" width="22.4" height="13.5">
+              <use xlink:href="#icon-burger"></use>
+            </svg>
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
+          <ul class="page-header__nav-list page-header__nav-list--close">
             <li class="page-header__nav-item">
               <a href="" class="page-header__nav-link">О путешествии</a>
             </li>
@@ -330,7 +336,7 @@
       </article>
     </div>
   </footer>
-  <article class="modal buy-tour-modal">
+  <article class="modal buy-tour-modal hidden">
     <button class="modal__close-button">
       <svg class="modal__close-button-icon" width="22" height="22" viewBox="0 0 24 25">
         <use xlink:href="#icon-cross-close"></use>
