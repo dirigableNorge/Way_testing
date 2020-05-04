@@ -33,3 +33,48 @@
 .page-footer__corp-offer {
   width: 340px;
 }
+
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .page-footer__wrapper {
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+  }
+
+  .page-footer__wrapper article {
+    margin-bottom: 30px;
+
+    &:nth-child(2) {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  .page-footer__next-travel {
+    width: 395px;
+  }
+
+  .page-footer__contacts {
+    width: 280px;
+  }
+
+  .page-footer__corp-offer {
+    position: relative;
+    width: 100%;
+    padding-top: 30px;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $grey;
+    }
+  }
+}

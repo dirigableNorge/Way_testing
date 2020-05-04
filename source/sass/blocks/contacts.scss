@@ -52,3 +52,9 @@
   fill: white;
   stroke: $grey;
 }
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .contacts {
+    padding-left: 50px;
+  }
+}

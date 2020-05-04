@@ -20,3 +20,13 @@
   line-height: 24px;
   color: rgba($really-dark, 0.5);
 }
+
+@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  .corp-offer__title {
+    text-align: center;
+  }
+
+  .corp-offer__text {
+    text-align: center;
+  }
+}

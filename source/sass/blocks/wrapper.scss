@@ -7,12 +7,12 @@
 @media (min-width: $tablet-width) and (max-width: $desktop-width) {
   .wrapper {
     max-width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 21px;
+    padding-right: 21px;
   }
 }
 
-@media (min-width: $mobile-width) and (max-width: $tablet-width) {
+@media (min-width: $mobile-width) and (max-width: calc($tablet-width - 1)) {
   .wrapper {
     max-width: $mobile-width;
     padding-left: 5px;
