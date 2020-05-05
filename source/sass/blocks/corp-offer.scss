@@ -1,6 +1,5 @@
 .corp-offer {
-  padding-left: 50px;
-  box-sizing: content-box;
+  padding-left: 4%;
 }
 
 .corp-offer__title {
@@ -21,7 +20,27 @@
   color: rgba($really-dark, 0.5);
 }
 
-@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+@media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+  .corp-offer {
+    padding-left: 0;
+  }
+
+  .corp-offer__title {
+    text-align: center;
+  }
+
+  .corp-offer__text {
+    text-align: center;
+  }
+}
+
+@media (max-width: $tablet-width - 1) {
+  .corp-offer {
+    padding-top: 30px;
+    padding-left: 0;
+    padding-bottom: 20px;
+  }
+
   .corp-offer__title {
     text-align: center;
   }

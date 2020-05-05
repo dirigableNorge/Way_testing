@@ -1,4 +1,10 @@
+.next-travel {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .next-travel__title {
+  width: 100%;
   margin: 0;
   margin-bottom: 20px;
 
@@ -11,6 +17,7 @@
 .next-travel__list {
   display: flex;
   flex-wrap: wrap;
+  width: 33.3%;
   margin: 0;
   padding: 0;
 
@@ -18,10 +25,28 @@
 }
 
 .next-travel__item {
+  width: 100%;
   margin-bottom: 10px;
-  width: 130px;
 
   font-size: 14px;
   line-height: 17px;
   color: rgba($really-dark, 0.5);
+}
+
+@media (max-width: $tablet-width - 1) {
+  .next-travel {
+    justify-content: center;
+  }
+
+  .next-travel__title {
+    text-align: center;
+  }
+
+  .next-travel__list {
+    width: 50%;
+  }
+
+  .next-travel__item {
+    text-align: center;
+  }
 }

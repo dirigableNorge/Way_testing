@@ -1,6 +1,5 @@
 .contacts {
-  padding-left: 90px;
-  box-sizing: content-box;
+  padding-left: 7.5%;
 }
 
 .contacts__title {
@@ -55,6 +54,15 @@
 
 @media (min-width: $tablet-width) and (max-width: $desktop-width) {
   .contacts {
-    padding-left: 50px;
+    padding-left: 6.5%;
+  }
+}
+
+@media (max-width: $tablet-width - 1) {
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
   }
 }

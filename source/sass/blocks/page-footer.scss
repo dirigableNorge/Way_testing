@@ -1,62 +1,64 @@
-.page-footer__wrapper {
-  display: flex;
-  margin: 0 auto;
-  padding-bottom: 80px;
-  padding-top: 80px;
-}
+@media (min-width: $desktop-width) {
+  .page-footer__wrapper {
+    display: flex;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
 
-.page-footer article:not(:last-child) {
-  position: relative;
+  .page-footer__next-travel,
+  .page-footer__contacts {
+    position: relative;
 
-  &::after {
-    content: "";
+    min-width: 34%;
 
-    position: absolute;
-    top: 0;
-    right: 0;
+    &::after {
+      content: "";
 
-    width: 1px;
-    height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
 
-    background-color: $grey;
+      width: 1px;
+      height: 100%;
+
+      background-color: $grey;
+    }
   }
 }
 
-.page-footer__next-travel {
-  width: 390px;
-}
-
-.page-footer__contacts {
-  width: 300px;
-}
-
-.page-footer__corp-offer {
-  width: 340px;
-}
-
-
-@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+@media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
   .page-footer__wrapper {
+    display: flex;
     flex-wrap: wrap;
     padding-bottom: 20px;
   }
 
   .page-footer__wrapper article {
     margin-bottom: 30px;
-
-    &:nth-child(2) {
-      &::after {
-        content: none;
-      }
-    }
   }
 
   .page-footer__next-travel {
-    width: 395px;
+    position: relative;
+
+    width: 51%;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 1px;
+      height: 100%;
+
+      background-color: $grey;
+    }
   }
 
   .page-footer__contacts {
-    width: 280px;
+    width: 42%;
   }
 
   .page-footer__corp-offer {
@@ -69,6 +71,35 @@
 
       position: absolute;
       top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $grey;
+    }
+  }
+}
+
+@media (max-width: $tablet-width - 1) {
+  .page-footer__next-travel {
+    padding-bottom: 10px;
+  }
+
+  .page-footer__contacts {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .page-footer__next-travel,
+  .page-footer__contacts {
+    position: relative;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
       left: 0;
 
       width: 100%;
