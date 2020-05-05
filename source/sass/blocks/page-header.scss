@@ -1,4 +1,4 @@
-@media (min-width: $tablet-width) {
+@media (min-width: $desktop-width) {
   .page-header {
     margin: 0 auto;
   }
@@ -7,9 +7,12 @@
     display: flex;
     align-items: center;
 
+    max-width: 1200px;
+    padding-left: 1.25%;
+    padding-right: 1.25%;
     margin: 0 auto;
-    padding-top: 39px;
-    padding-bottom: 35px;
+    padding-top: 38px;
+    padding-bottom: 32px;
   }
 
   .page-header__logo {
@@ -18,11 +21,15 @@
     line-height: 0;
   }
 
-  .page-header__nav-toggle-button {
+  .page-header__nav-open-button {
     display: none;
 
     font-size: 0;
     line-height: 0;
+  }
+
+  .page-header__nav-close-button {
+    display: none;
   }
 
   .page-header__nav-list {
@@ -62,7 +69,7 @@
     padding-left: 28px;
 
     font-size: 18px;
-    line-height: 32px;
+    line-height: 30px;
     color: $main-accent;
 
     &:hover,
@@ -143,10 +150,21 @@
   }
 }
 
-@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+@media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
   .page-header__top-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
     padding: 0;
-    padding-left: 21px;
+    padding-left: 2.7%;
+  }
+
+  .page-header__logo {
+    margin-right: auto;
+
+    line-height: 0;
   }
 
   .page-header__phone-us {
@@ -154,22 +172,57 @@
   }
 
   .page-header__nav {
-    position: relative;
   }
 
-  .page-header__nav-toggle-button {
+  .page-header__nav-open-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 72px;
     height: 50px;
+    margin: 0;
+    padding: 0;
+
+    background-color: $main-accent;
+
+    border: 0 none;
+  }
+
+  .page-header__nav-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 105;
+
+    width: 50px;
+    height: 50px;
+    padding: 0;
+
+    font-size: 0;
+    line-height: 0;
+
+    border: 0 none;
+    background-color: transparent;
+
+    cursor: pointer;
+  }
+
+  .page-header__nav-close-button-icon {
+    fill: none;
+    stroke: rgba($really-dark, 0.2);
+  }
+
+  .page-header__nav-close-button--close {
+    display: none;
   }
 
   .page-header__nav-list {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 100;
 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     width: 320px;
@@ -208,33 +261,55 @@
     padding: 0;
     padding-top: 60px;
     padding-bottom: 80px;
+
+    color: white;
+
+    background-color: black;
+    background-image: url("../img/header-background.jpg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .page-header__intro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 400px;
     margin: 0 auto;
   }
 
   .page-header__intro-title {
+    margin: 0;
     margin-bottom: 15px;
 
+    font-weight: 600;
     font-size: 30px;
     line-height: 45px;
     text-align: center;
   }
 
   .page-header__intro-text {
-    min-width: 100%;
+    max-width: 400px;
+    margin: 0;
     margin-bottom: 15px;
 
     text-align: center;
   }
+
+  .page-header__next-button {
+    position: relative;
+  }
+
+  .page-header__next-button-icon {
+    position: absolute;
+    top: 18px;
+    right: 40px;
+
+    fill: transparent;
+  }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $tablet-width - 1) {
   .page-header {
     min-width: $mobile-width;
     margin-bottom: 110px;
@@ -258,13 +333,19 @@
     align-items: center;
     width: 50px;
     height: 50px;
+    margin: 0;
+    padding: 0;
+
+    background-color: $main-accent;
+
+    border: 0 none;
   }
 
   .page-header__nav-close-button {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 15;
+    z-index: 105;
 
     width: 50px;
     height: 50px;
@@ -292,6 +373,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 100;
 
     display: flex;
     flex-direction: column;
@@ -316,6 +398,8 @@
   }
 
   .page-header__nav-link {
+    position: relative;
+
     display: block;
     width: 100%;
     padding: 17px 16px;
@@ -326,6 +410,20 @@
     color: $dark-new;
 
     background-color: $background-grey;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 23px;
+      right: 24px;
+
+      width: 8px;
+      height: 12px;
+
+      background-image: url("../img/arrow-right.svg");
+      background-repeat: no-repeat;
+    }
   }
 
   .page-header__phone-us {
@@ -337,8 +435,6 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100% 235px;
-
-    background-color: white;
   }
 
   .page-header__bottom-wrapper {
@@ -349,7 +445,8 @@
   }
 
   .page-header__intro-title {
-    margin-bottom: 100px;
+    max-width: 288px;
+    margin: 0 auto 100px;
 
     font-weight: 600;
     font-size: 24px;
@@ -365,12 +462,15 @@
   }
 
   .page-header__next-button {
-    width: 100%;
-    padding: 19px 40px;
+    position: relative;
+    max-width: 288px;
   }
 
   .page-header__next-button-icon {
+    position: absolute;
     top: 18px;
     right: 40px;
+
+    fill: transparent;
   }
 }

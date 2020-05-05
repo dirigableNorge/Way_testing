@@ -1,23 +1,21 @@
-@media (min-width: $tablet-width) {
+@media (min-width: $desktop-width) {
   .wrapper {
     max-width: 1200px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1.25%;
+    padding-right: 1.25%;
   }
 }
 
-@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+@media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
   .wrapper {
-    max-width: 100%;
-    padding-left: 21px;
-    padding-right: 21px;
+    padding-left: 2.7%;
+    padding-right: 2.7%;
   }
 }
 
-@media (min-width: $mobile-width) and (max-width: $tablet-width) {
+@media (max-width: $tablet-width - 1) {
   .wrapper {
-    max-width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
