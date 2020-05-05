@@ -10,7 +10,6 @@ const onOpenHeadMenu = () => {
 };
 
 const onCloseHeadMenu = () => {
-  console.log(headMenu);
   headMenu.classList.add('page-header__nav-list--close');
   headMenuCloseButton.classList.add('page-header__nav-close-button--close');
 };

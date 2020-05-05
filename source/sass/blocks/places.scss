@@ -1,147 +1,154 @@
-.places {
-  padding-top: 200px;
-}
-
-.places__wrapper {
-  margin: 0 auto;
-}
-
-.places__title {
-  position: relative;
-  margin: 0;
-  margin-bottom: 65px;
-  max-width: 350px;
-
-  font-weight: 600;
-  font-size: 55px;
-  line-height: 80px;
-  color: $dark;
-
-  &::after {
-    content: "";
-
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-
-    width: 228px;
-    height: 4px;
-
-    background-color: $main-accent;
+@media (min-width: $desktop-width) {
+  .places {
+    padding-top: 200px;
   }
-}
 
-.places__tip {
-  display: block;
-  margin: 0;
-  margin-bottom: 55px;
-  max-width: 350px;
+  .places__wrapper {
+    margin: 0 auto;
+  }
 
-  line-height: 28px;
-  color: rgba($dark, 0.7);
-}
+  .places__title {
+    position: relative;
+    margin: 0;
+    margin-bottom: 65px;
+    max-width: 350px;
 
-.places__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  margin-left: -60px;
-  padding: 0;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 80px;
+    color: $dark;
 
-  list-style: none;
-}
-
-.places__item {
-  position: relative;
-
-  margin-left: 60px;
-  margin-bottom: 100px;
-
-  line-height: 0;
-}
-
-.places__link {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-
-  width: 350px;
-  height: 430px;
-
-  line-height: 0;
-
-  &:hover,
-  &:focus {
-    &::before {
+    &::after {
       content: "";
 
       position: absolute;
-      top: 0;
+      bottom: -30px;
       left: 0;
-      z-index: 1;
 
-      width: 100%;
-      height: 100%;
+      width: 228px;
+      height: 4px;
 
-      background-color: rgba($really-dark, 0.6);
+      background-color: $main-accent;
     }
+  }
 
-    &::after {
-      content: "смотреть подробнее";
+  .places__tip {
+    display: block;
+    margin: 0;
+    margin-bottom: 55px;
+    max-width: 350px;
 
-      position: absolute;
-      top: 182px;
-      left: calc(50% - 133px);
-      z-index: 2;
+    line-height: 28px;
+    color: rgba($dark, 0.7);
+  }
 
-      padding: 25px 30px;
+  .places__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    margin-left: -5%;
+    padding: 0;
 
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 17px;
-      text-align: center;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: white;
+    box-sizing: border-box;
+    list-style: none;
+  }
 
-      border: 1px solid rgba(white, 0.7);
+  .places__item {
+    position: relative;
+
+    margin-left: 4%;
+    margin-bottom: 100px;
+
+    line-height: 0;
+  }
+
+  .places__link {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 350px;
+    height: 430px;
+
+    line-height: 0;
+
+    &:hover,
+    &:focus {
+      &::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba($really-dark, 0.6);
+      }
+
+      &::after {
+        content: "смотреть подробнее";
+
+        position: absolute;
+        top: 182px;
+        left: calc(50% - 133px);
+        z-index: 2;
+
+        padding: 25px 30px;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: white;
+
+        border: 1px solid rgba(white, 0.7);
+      }
     }
+  }
+
+  .places__name {
+    z-index: 3;
+    width: 215px;
+    margin: 0;
+    padding: 17px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $dark;
+
+    background-color: white;
+  }
+
+  .places__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
-.places__name {
-  z-index: 3;
-  width: 215px;
-  margin: 0;
-  padding: 17px;
+@media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+  .places__wrapper {
+    padding-top: 80px;
+  }
 
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-  color: $dark;
-
-  background-color: white;
-}
-
-.places__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media (min-width: $tablet-width) and (max-width: $desktop-width) {
   .places__title {
-    max-width: 100%;
+    margin: 0;
     margin-bottom: 20px;
     text-align: center;
 
@@ -151,52 +158,150 @@
   }
 
   .places__tip {
-    max-width: 350px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 40px;
+    display: block;
+    max-width: 345px;
+    margin: 0 auto 40px;
 
+    font-size: 16px;
+    line-height: 28px;
     text-align: center;
+    color: rgba($dark, 0.7);
   }
 
   .places__list {
-    margin-left: -30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    margin-left: -4%;
     margin-bottom: 80px;
+    padding: 0;
+
+    list-style: none;
   }
 
   .places__item {
     max-width: 288px;
-    margin-left: 30px;
-    margin-bottom: 20px;
+    margin-left: 4%;
+    margin-bottom: 30px;
   }
 
   .places__link {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
     width: 288px;
     height: 425px;
+
+    line-height: 0;
+  }
+
+  .places__name {
+    z-index: 3;
+    width: 215px;
+    margin: 0;
+    padding: 17px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $dark;
+
+    background-color: white;
+  }
+
+  .places__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
-@media (min-width: $mobile-width) and (max-width: $tablet-width - 1) {
+@media (max-width: $tablet-width - 1) {
   .places {
     padding-top: 0;
   }
 
   .places__title {
-    max-width: 100%;
+    margin: 0;
     margin-bottom: 20px;
 
     font-size: 24px;
     line-height: 36px;
     text-align: center;
-
-    &::after {
-      content: none;
-    }
   }
 
   .places__tip {
+    display: block;
     margin-bottom: 20px;
-    
+
+    font-style: 16px;
+    line-height: 28px;
     text-align: center;
+    color: rgba($dark, 0.7);
+  }
+
+  .places__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .places__item {
+    margin-bottom: 30px;
+  }
+
+  .places__link {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 288px;
+    height: 425px;
+
+    line-height: 0;
+  }
+
+  .places__name {
+    z-index: 3;
+    width: 215px;
+    margin: 0;
+    padding: 17px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: $dark;
+
+    background-color: white;
+  }
+
+  .places__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
