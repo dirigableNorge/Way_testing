@@ -4,7 +4,7 @@
   padding-right: 15px;
 }
 
-@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+@media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
   .wrapper {
     max-width: 100%;
     padding-left: 21px;
@@ -12,9 +12,9 @@
   }
 }
 
-@media (min-width: $mobile-width) and (max-width: calc($tablet-width - 1)) {
+@media (min-width: $mobile-width) and (max-width: $tablet-width - 1) {
   .wrapper {
-    max-width: $mobile-width;
+    max-width: 100%;
     padding-left: 5px;
     padding-right: 5px;
   }
