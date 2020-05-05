@@ -21,13 +21,19 @@
           <img src="img/way-logo.png" width="57" height="22" alt="logo image.">
         </a>
         <nav class="page-header__nav">
-          <button class="button page-header__nav-toggle-button">
-            <svg class="page-header__nav-toggle-button-icon" width="22.4" height="13.5">
+          <button class="button page-header__nav-open-button">
+            <svg class="page-header__nav-open-button-icon" width="22.4" height="13.5">
               <use xlink:href="#icon-burger"></use>
             </svg>
             <span class="visually-hidden">Открыть меню</span>
           </button>
-          <ul class="page-header__nav-list page-header__nav-list--close">
+          <button class="page-header__nav-close-button" type="button">
+            <span class="visually-hidden">Close menu</span>
+            <svg class="page-header__nav-close-button-icon" width="22" height="22" viewBox="0 0 24 25">
+              <use xlink:href="#icon-cross-close"></use>
+            </svg>
+          </button>
+          <ul class="page-header__nav-list">
             <li class="page-header__nav-item">
               <a href="" class="page-header__nav-link">О путешествии</a>
             </li>
@@ -60,7 +66,7 @@
   </header>
   <main class="page-main">
     <h1 class="visually-hidden">Путешествие по Европе</h1>
-    <section class="page-main__places places">
+    <section class="page-main__places places hidden">
       <div class="wrapper places__wrapper">
         <h2 class="places__title">Места посещения</h2>
         <small class="places__tip">Вы можете выбрать полный тур или частичный, с посещением первых 3 мест</small>
@@ -98,7 +104,7 @@
         </ul>
       </div>
     </section>
-    <div class="page-main__united-sections">
+    <div class="page-main__united-sections hidden">
       <section class="page-main__countries countries">
         <div class="wrapper countries__wrapper">
           <h2 class="countries__title visually-hidden">Каталог стран</h2>
@@ -299,7 +305,7 @@
         </div>
       </section>
     </div>
-    <section class="page-main__call-us call-us">
+    <section class="page-main__call-us call-us hidden">
       <h2 class="visually-hidden">Обратная связь</h2>
       <div class="wrapper call-us__wrapper">
         <form action="" class="call-us__form" method="POST" id="call-us">
@@ -325,7 +331,7 @@
       </div>
     </section>
   </main>
-  <footer class="page-footer">
+  <footer class="page-footer hidden">
     <div class="wrapper page-footer__wrapper">
       <article class="page-footer__next-travel next-travel">
         <h2 class="next-travel__title">Следующие путешествия</h2>
@@ -385,5 +391,6 @@
       <p class="buy-tour-modal__feedback-message">Форма успешно отправлена, спасибо! :)</p>
     </div>
   </article>
+  <script src="js/main.min.js"></script>
 </body>
 </html>

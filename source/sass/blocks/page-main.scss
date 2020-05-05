@@ -8,7 +8,7 @@
   background-position: center top 200px;
 }
 
-@media (min-width: $tablet-width) and (max-width: $desktop-width) {
+@media (max-width: $desktop-width - 1) {
   .page-main__united-sections {
     background-image: none;
   }
