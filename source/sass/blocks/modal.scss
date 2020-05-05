@@ -35,3 +35,10 @@
   fill: none;
   stroke: rgba($really-dark, 0.2);
 }
+
+@media (max-width: $tablet-width - 1) {
+  .modal {
+    top: 0;
+    left: 0;
+  }
+}
