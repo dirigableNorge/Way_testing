@@ -35,10 +35,10 @@
           </button>
           <ul class="page-header__nav-list">
             <li class="page-header__nav-item">
-              <a href="" class="page-header__nav-link">О путешествии</a>
+              <a href="#places" class="page-header__nav-link">О путешествии</a>
             </li>
             <li class="page-header__nav-item">
-              <a href="" class="page-header__nav-link">Цены</a>
+              <a href="#prices" class="page-header__nav-link">Цены</a>
             </li>
           </ul>
         </nav>
@@ -54,7 +54,7 @@
         <div class="page-header__intro">
           <h2 class="page-header__intro-title">Путешествие по Европе</h2>
           <p class="page-header__intro-text">В этом туре вы откроете для себя Европу в&nbsp;новом свете. Вас ждет: море, горы, а также потрясающая красота природы.</p>
-          <a href="" class="button page-header__next-button">
+          <a href="#countries" class="button page-header__next-button">
             <svg class="page-header__next-button-icon" width="16" height="16">
               <use xlink:href="#icon-arrow-down"></use>
             </svg>
@@ -66,37 +66,37 @@
   </header>
   <main class="page-main">
     <h1 class="visually-hidden">Путешествие по Европе</h1>
-    <section class="page-main__places places">
+    <section class="page-main__places places" id="places">
       <div class="wrapper places__wrapper">
         <h2 class="places__title">Места посещения</h2>
         <small class="places__tip">Вы можете выбрать полный тур или частичный, с посещением первых 3 мест</small>
         <ul class="places__list">
           <li class="places__item">
-            <a href="" class="places__link">
+            <a href="#countries" class="places__link" id="placeLink1">
               <img class="places__image" src="img/Greece.jpg" width="350" height="430" alt="Греция.">
-              <p href="" class="places__name">Греция</p>
+              <p class="places__name">Греция</p>
             </a>
           </li>
           <li class="places__item">
-            <a href="" class="places__link">
+            <a href="#countries" class="places__link" id="placeLink2">
               <img class="places__image" src="img/Albania.jpg" width="350" height="430" alt="Албания.">
               <p class="places__name">Албания</p>
             </a>
           </li>
           <li class="places__item">
-            <a href="" class="places__link">
+            <a href="#countries" class="places__link" id="placeLink3">
               <img src="img/North_Macedonia.jpg" width="350" height="430" alt="Македония." class="places__image">
               <p class="places__name">Македония</p>
             </a>
           </li>
           <li class="places__item">
-            <a href="" class="places__link">
+            <a href="#countries" class="places__link" id="placeLink4">
               <img class="places__image" src="img/Montenegro.jpg" width="350" height="430" alt="Черногория.">
               <p class="places__name">Черногория</p>
             </a>
           </li>
           <li class="places__item">
-            <a href="" class="places__link">
+            <a href="#countries" class="places__link" id="placeLink5">
               <img src="img/Croatia.jpg" width="350" height="430" alt="Хорватия." class="places__image">
               <p class="places__name">Хорватия</p>
             </a>
@@ -105,28 +105,28 @@
       </div>
     </section>
     <div class="page-main__united-sections">
-      <section class="page-main__countries countries">
+      <section class="page-main__countries countries" id="countries">
         <div class="wrapper countries__wrapper">
           <h2 class="countries__title visually-hidden">Каталог стран</h2>
           <ul class="tabs countries__tabs">
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab01" type="buton" disabled>Греция</button>
+              <button class="tabs__button" id="countriesTab1" type="buton" disabled>Греция</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab02" type="buton">Албания</button>
+              <button class="tabs__button" id="countriesTab2" type="buton">Албания</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab03" type="buton">Македония</button>
+              <button class="tabs__button" id="countriesTab3" type="buton">Македония</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab04" type="buton">Черногория</button>
+              <button class="tabs__button" id="countriesTab4" type="buton">Черногория</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab05" type="buton">Хорватия</button>
+              <button class="tabs__button" id="countriesTab5" type="buton">Хорватия</button>
             </li>
           </ul>
           <ul class="countries__list">
-            <li class="countries__item">
+            <li class="countries__item" id="country1">
               <article class="countries__item-description">
                 <h3 class="countries__item-title">Греция</h3>
                 <p class="countries__item-text">На севере Греции находится один из крупнейших комплексов монастырей, расположенных на вершинах скал. Название его «Метеора» буквально переводится как «висящие в воздухе». Этот монастырь основная цель нашего путешествия в Греции. После покарения скал из песчанника и обломочной горной породы, достигающих в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая в монастырях Метеоры. </p>
@@ -144,11 +144,11 @@
               </article>
               </div>
             </li>
-            <li class="countries__item hidden">
+            <li class="countries__item hidden" id="country2">
               <article class="countries__item-description">
                 <h3 class="countries__item-title">Албания</h3>
                 <p class="countries__item-text">В Албании мы посетим Курорт Ксамиль. Этот курорт поразит вас чистейшей водой и удивительным пляжем. Вначале кажется, что на пляже вас встречает обычный, правда невероятно белоснежный и слишком крупный песок. Однако, присмотревшись, можно понять, что это не песок, а камни, перетёртые до такого мелкого состояния. </p>
-                <button class="button countries__item-button">купить тур сейчас</button>
+                <button class="button countries__item-button buy-tour-modal-open-button">купить тур сейчас</button>
               </article>
               <div class="countries__item-wrapper">
                 <img class="countries__item-image" src="img/Albania.jpg" width="430" height="596" alt="Албания.">
@@ -162,11 +162,11 @@
                 </article>
               </div>
             </li>
-            <li class="countries__item hidden">
+            <li class="countries__item hidden" id="country3">
               <article class="countries__item-description">
                 <h3 class="countries__item-title">Македония</h3>
                 <p class="countries__item-text">В Македонии нашей целью будет посетить Палаошник, который расположился в удивительно красивой лесистой местности возле Охридского озера и Самуиловой твердыни. А также мы заберемся на вершину горы Татичев Камен где находится  археологический памятник Кокино в длину около 100 метров.</p>
-                <button class="button countries__item-button">купить тур сейчас</button>
+                <button class="button countries__item-button buy-tour-modal-open-button">купить тур сейчас</button>
               </article>
               <div class="countries__item-wrapper">
                 <img class="countries__item-image" src="img/North_Macedonia.jpg" width="430" height="596" alt="Македония.">
@@ -180,11 +180,11 @@
                 </article>
               </div>
             </li>
-            <li class="countries__item hidden">
+            <li class="countries__item hidden" id="country4">
               <article class="countries__item-description">
                 <h3 class="countries__item-title">Черногория</h3>
                 <p class="countries__item-text">Черногория удивит нас самым большим в Европе каньоном реки Тара, который в некоторых местах высотой берегов доходит до 1300 метров, а шириной не превышает трех. При этом длина каньона составляет 80 км. </p>
-                <button class="button countries__item-button">купить тур сейчас</button>
+                <button class="button countries__item-button buy-tour-modal-open-button">купить тур сейчас</button>
               </article>
               <div class="countries__item-wrapper">
                 <img class="countries__item-image" src="img/Montenegro.jpg" width="430" height="596" alt="Черногория.">
@@ -198,11 +198,11 @@
                 </article>
               </div>
             </li>
-            <li class="countries__item hidden">
+            <li class="countries__item hidden" id="country5">
               <article class="countries__item-description">
                 <h3 class="countries__item-title">Хорватия</h3>
                 <p class="countries__item-text">В Хорватии мы посетим необычайную пещеру названную Бередине. Ее подземный мир увлечет вас на 80-ти метровую глубину через 5 освещенных залов, украшенных удивительными нерукотворными скульптурами —  сталактитами и сталагмитами —  формировавшимися тысячи и тысячи лет.</p>
-                <button class="button countries__item-button">купить тур сейчас</button>
+                <button class="button countries__item-button buy-tour-modal-open-button">купить тур сейчас</button>
               </article>
               <div class="countries__item-wrapper">
                 <img class="countries__item-image" src="img/Croatia.jpg" width="430" height="596" alt="Хорватия.">
@@ -219,7 +219,7 @@
           </ul>
         </div>
       </section>
-      <section class="page-main__prices prices">
+      <section class="page-main__prices prices" id="prices">
         <div class="wrapper prices__wrapper">
           <div class="prices__description">
             <h2 class="prices__title">Цены</h2>
@@ -262,7 +262,7 @@
                   Экскурсии по удивительно красивым местам Европы
                 </li>
               </ul>
-              <a href="" class="button prices__buy-now-button">купить тур сейчас</a>
+              <a href="" class="button prices__buy-now-button buy-tour-modal-open-button">купить тур сейчас</a>
             </li>
             <li class="prices__item">
               <h3 class="prices__item-title"><span>Экономный</span><span class="prices__item-cost">$1399</span></h3>
@@ -299,7 +299,7 @@
                   Экскурсии по удивительно красивым местам Европы
                 </li>
               </ul>
-              <a href="" class="button prices__buy-now-button">купить тур сейчас</a>
+              <a href="" class="button prices__buy-now-button buy-tour-modal-open-button">купить тур сейчас</a>
             </li>
           </ul>
         </div>
