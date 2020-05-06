@@ -31,9 +31,10 @@ window.onload = () => {
 const buyTourModalElement = document.querySelector('.buy-tour-modal');
 const buyTourModalCLoseButton = document.querySelector('.buy-tour-modal__close-button');
 const buyTourModalOverlayElement = document.querySelector('.buy-tour-modal__overlay');
-const buyTourModalOpenButton = document.querySelector('.buy-tour-modal-open-button');
+const buyTourModalOpenButtons = document.querySelectorAll('.buy-tour-modal-open-button');
 
-const onOpenBuyTourModal = () => {
+const onOpenBuyTourModal = (evt) => {
+  evt.preventDefault();
   buyTourModalElement.classList.remove('hidden');
   document.addEventListener('keydown', onKeyDown);
 };
@@ -53,9 +54,9 @@ if (buyTourModalCLoseButton) {
   buyTourModalCLoseButton.addEventListener('click', onCloseBuyTourModal)
 }
 
-if (buyTourModalOpenButton) {
-  buyTourModalOpenButton.addEventListener('click', onOpenBuyTourModal);
-}
+buyTourModalOpenButtons.forEach((button) => {
+  button.addEventListener('click', onOpenBuyTourModal);
+});
 
 if (buyTourModalOverlayElement) {
   buyTourModalOverlayElement.addEventListener('click', onCloseBuyTourModal);
@@ -115,6 +116,3 @@ const onClickPlacesCard = (evt) => {
 placesCardsElements.forEach((card) => {
   card.addEventListener('click', onClickPlacesCard);
 });
-
-// open modal buttons
-
