@@ -323,12 +323,17 @@
               <span class="visually-hidden">Электронная почта</span>
             </label>
           </div>
-          <button class="button call-us__submit-button">отправить</button>
+          <button class="button call-us__submit-button" type="button">отправить</button>
+          <div class="call-us__feedback hidden">
+            <button class="call-us__feedback-close-button" type="button">
+              <svg class="call-us__close-button-icon" width="22" height="22" viewBox="0 0 24 25">
+                <use xlink:href="#icon-cross-close"></use>
+              </svg>
+              Close
+            </button>
+            <p class="call-us__feedback-message">Форма успешно отправлена, спасибо! :)</p>
+          </div>
         </form>
-        <div class="call-us__feedback hidden">
-          <button class="call-us__feedback-close-button">Close</button>
-          <p class="call-us__feedback-message">Форма успешно отправлена, спасибо! :)</p>
-        </div>
       </div>
     </section>
   </main>

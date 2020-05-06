@@ -121,15 +121,16 @@ placesCardsElements.forEach((card) => {
 
 // call us form
 
-const callUsForm = document.querySelector('.call-us__form');
-const callUsFormSubmitButton = callUsForm.querySelector('.call-us__submit-button');
+const callUsFormElement = document.querySelector('.call-us__form');
+const callUsFormFeedbackElement = document.querySelector('.call-us__feedback');
+const callUsFormSubmitButton = callUsFormElement.querySelector('.call-us__submit-button');
 
 const validateSubmitCallUsForm = () => {
   return true;
 }
 
 const showSubmitCallUsFormFeedback = () => {
-
+  callUsFormFeedbackElement.classList.remove('hidden');
 }
 
 const onSubmtiCallUsForm = (evt) => {
@@ -140,3 +141,4 @@ const onSubmtiCallUsForm = (evt) => {
 }
 
 callUsFormSubmitButton.addEventListener('click', onSubmtiCallUsForm);
+callUsFormElement.addEventListener('submit', onSubmtiCallUsForm);
