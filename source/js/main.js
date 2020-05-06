@@ -36,18 +36,18 @@ const buyTourModalOpenButton = document.querySelector('.buy-tour-modal-open-butt
 const onOpenBuyTourModal = () => {
   buyTourModalElement.classList.remove('hidden');
   document.addEventListener('keydown', onKeyDown);
-}
+};
 
 const onKeyDown = (evt) => {
   if (evt.key === 'Escape') {
     onCloseBuyTourModal();
     document.removeEventListener('keydown', onKeyDown);
   }
-}
+};
 
 const onCloseBuyTourModal = () => {
   buyTourModalElement.classList.add('hidden');
-}
+};
 
 if (buyTourModalCLoseButton) {
   buyTourModalCLoseButton.addEventListener('click', onCloseBuyTourModal)
@@ -60,3 +60,61 @@ if (buyTourModalOpenButton) {
 if (buyTourModalOverlayElement) {
   buyTourModalOverlayElement.addEventListener('click', onCloseBuyTourModal);
 }
+
+//tabs
+
+const tabsElements = document.querySelectorAll('.tabs__button');
+
+const tabsEnabled = () => {
+  tabsElements.forEach((button) => {
+    button.removeAttribute("disabled");
+  });
+}
+
+const onTabClick = (evt) => {
+  evt.preventDefault();
+  tabsEnabled();
+  evt.target.disabled = true;
+
+  console.log(evt.target.id.toString().substr(12));
+  showCountryCard(evt.target.id.toString().substr(12));
+};
+
+tabsElements.forEach((button) => {
+  button.addEventListener('click', onTabClick);
+});
+
+//countries card
+
+const countriesCardsElements = document.querySelectorAll('.countries__item');
+
+const hideAllCountriesCard = () => {
+  countriesCardsElements.forEach((card) => {
+    card.classList.add('hidden');
+  });
+};
+
+const showCountryCard = (id) => {
+  hideAllCountriesCard();
+  const card = document.getElementById('country' + id);
+  card.classList.remove('hidden');
+};
+
+
+//places card
+
+const placesCardsElements = document.querySelectorAll('.places__link');
+
+const onClickPlacesCard = (evt) => {
+  const tabElement = document.getElementById('countriesTab' + evt.target.id.toString().substr(9));
+  if (tabElement) {
+    tabElement.click();
+  }
+}
+
+placesCardsElements.forEach((card) => {
+  card.addEventListener('click', onClickPlacesCard);
+});
+
+// open modal buttons
+
