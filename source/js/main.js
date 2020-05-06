@@ -122,23 +122,67 @@ placesCardsElements.forEach((card) => {
 // call us form
 
 const callUsFormElement = document.querySelector('.call-us__form');
-const callUsFormFeedbackElement = document.querySelector('.call-us__feedback');
+const callUsFormFeedbackElement = callUsFormElement.querySelector('.call-us__feedback');
+const callUsFormFeedbackCloseButton = callUsFormElement.querySelector('.call-us__close-button-icon');
 const callUsFormSubmitButton = callUsFormElement.querySelector('.call-us__submit-button');
 
 const validateSubmitCallUsForm = () => {
   return true;
-}
+};
+
+const clearCallUsForm = () => {
+
+};
 
 const showSubmitCallUsFormFeedback = () => {
   callUsFormFeedbackElement.classList.remove('hidden');
-}
+};
+
+const hideSubmitCallUsFormFeedback = () => {
+  callUsFormFeedbackElement.classList.add('hidden');
+};
 
 const onSubmtiCallUsForm = (evt) => {
   evt.preventDefault();
   if (validateSubmitCallUsForm()) {
     showSubmitCallUsFormFeedback();
   }
-}
+};
 
 callUsFormSubmitButton.addEventListener('click', onSubmtiCallUsForm);
 callUsFormElement.addEventListener('submit', onSubmtiCallUsForm);
+callUsFormFeedbackCloseButton.addEventListener('click', hideSubmitCallUsFormFeedback);
+
+// buy tour form
+
+const buyTourFormElement = document.querySelector('.buy-tour-modal__form');
+const buyTourFormFeedbackElement = document.querySelector('.buy-tour-modal__feedback');
+const buyTourFormFeedbackCloseButton = document.querySelector('.buy-tour-modal__feedback-close-button');
+const buyTourFormSubmitButton = buyTourFormElement.querySelector('.buy-tour-modal__submit-button');
+
+const validateBuyTourForm = () => {
+  return true;
+};
+
+const clearBuyTourForm = () => {
+
+};
+
+const showBuyTourFormFeedback = () => {
+  buyTourFormFeedbackElement.classList.remove('hidden');
+};
+
+const hideBuyTourFormFeedback = () => {
+  buyTourFormFeedbackElement.classList.add('hidden');
+};
+
+const onSubmitBuyTourForm = (evt) => {
+  evt.preventDefault();
+  if(validateBuyTourForm()) {
+    showBuyTourFormFeedback();
+  }
+}
+
+buyTourFormSubmitButton.addEventListener('click', onSubmitBuyTourForm);
+buyTourFormElement.addEventListener('click', onSubmitBuyTourForm);
+buyTourFormFeedbackCloseButton.addEventListener('click', hideBuyTourFormFeedback);
