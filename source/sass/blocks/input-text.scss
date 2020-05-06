@@ -1,3 +1,7 @@
+.input-wrapper {
+  position: relative;
+}
+
 .input-text {
   padding: 15px;
 
@@ -16,4 +20,57 @@
 
 .input-text:required {
   padding-left: 26px;
+
+  background-image: url("../img/icon-star.svg");
+  background-repeat: no-repeat;
+  background-size: 6px;
+  background-position: 15px 7px;
+}
+
+.input-text--phone,
+.input-text:required.input-text--phone {
+  padding-left: 51px;
+}
+
+.input-text--phone + .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  &::after {
+    content: "+7";
+
+    position: absolute;
+    top: 16px;
+    left: 26px;
+
+    font-family: "Monserrat", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    color: $really-dark;
+  }
+}
+
+.input-tex:invalid {
+  border-color: $main-accent;
+}
+
+.input-text-invalid + .input-label {
+  position: absolute;
+
+  &::before {
+    content: "Данные не верны";
+
+    position: absolute;
+    top: -16px;
+    left: 0;
+
+    width: 100%;
+
+    font-size: 12px;
+    line-height: 15px;
+    color: $main-accent;
+  }
 }
