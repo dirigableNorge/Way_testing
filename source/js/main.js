@@ -30,10 +30,19 @@ window.onload = () => {
 
 const buyTourModalElement = document.querySelector('.buy-tour-modal');
 const buyTourModalCLoseButton = document.querySelector('.buy-tour-modal__close-button');
+const buyTourModalOverlayElement = document.querySelector('.buy-tour-modal__overlay');
 const buyTourModalOpenButton = document.querySelector('.buy-tour-modal-open-button');
 
 const onOpenBuyTourModal = () => {
   buyTourModalElement.classList.remove('hidden');
+  document.addEventListener('keydown', onKeyDown);
+}
+
+const onKeyDown = (evt) => {
+  if (evt.key === 'Escape') {
+    onCloseBuyTourModal();
+    document.removeEventListener('keydown', onKeyDown);
+  }
 }
 
 const onCloseBuyTourModal = () => {
@@ -46,4 +55,8 @@ if (buyTourModalCLoseButton) {
 
 if (buyTourModalOpenButton) {
   buyTourModalOpenButton.addEventListener('click', onOpenBuyTourModal);
+}
+
+if (buyTourModalOverlayElement) {
+  buyTourModalOverlayElement.addEventListener('click', onCloseBuyTourModal);
 }

@@ -1,5 +1,27 @@
 .modal {
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 500;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  background-color: rgba($really-dark, 0.7);
+}
+
+.modal__wrapper {
+  position: fixed;
   top: 200px;
   left: calc(50vw - 364px);
   z-index: 1000;
