@@ -105,9 +105,11 @@
   }
 
   .page-header__bottom-wrapper {
+    display: flex;
+    justify-content: flex-end;
     margin: 0 auto;
     padding-top: 185px;
-    padding-left: 700px;
+    padding-right: 4%;
     padding-bottom: 297px;
   }
 
