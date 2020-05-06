@@ -29,6 +29,7 @@ window.onload = () => {
 // modal
 
 const buyTourModalElement = document.querySelector('.buy-tour-modal');
+const buyTourModalTelephoneInput = document.querySelector('#buyTourTelephone');
 const buyTourModalCLoseButton = document.querySelector('.buy-tour-modal__close-button');
 const buyTourModalOverlayElement = document.querySelector('.buy-tour-modal__overlay');
 const buyTourModalOpenButtons = document.querySelectorAll('.buy-tour-modal-open-button');
@@ -37,6 +38,7 @@ const onOpenBuyTourModal = (evt) => {
   evt.preventDefault();
   buyTourModalElement.classList.remove('hidden');
   document.addEventListener('keydown', onKeyDown);
+  buyTourModalTelephoneInput.focus();
 };
 
 const onKeyDown = (evt) => {
@@ -116,3 +118,25 @@ const onClickPlacesCard = (evt) => {
 placesCardsElements.forEach((card) => {
   card.addEventListener('click', onClickPlacesCard);
 });
+
+// call us form
+
+const callUsForm = document.querySelector('.call-us__form');
+const callUsFormSubmitButton = callUsForm.querySelector('.call-us__submit-button');
+
+const validateSubmitCallUsForm = () => {
+  return true;
+}
+
+const showSubmitCallUsFormFeedback = () => {
+
+}
+
+const onSubmtiCallUsForm = (evt) => {
+  evt.preventDefault();
+  if (validateSubmitCallUsForm()) {
+    showSubmitCallUsFormFeedback();
+  }
+}
+
+callUsFormSubmitButton.addEventListener('click', onSubmtiCallUsForm);
