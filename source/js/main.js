@@ -37,6 +37,10 @@ const phoneNumberValidation = (phoneNumber, isRequired) => {
   return false;
 };
 
+let isLocalStorageSupport = false;
+let userPhoneNumber = '';
+let userEmail = '';
+
 //menu
 
 const headMenuElement = document.querySelector('.page-header__nav-list');
@@ -60,10 +64,6 @@ if (headMenuOpenButton) {
 if (headMenuCloseButton) {
   headMenuCloseButton.addEventListener('click', onCloseHeadMenu);
 }
-
-window.onload = () => {
-  onCloseHeadMenu();
-};
 
 // feedback modal
 
@@ -98,7 +98,8 @@ if(feedbackModalOverlayElement) {
 // modal
 
 const buyTourModalElement = document.querySelector('.buy-tour-modal');
-const buyTourModalTelephoneInput = document.querySelector('#buyTourPhoneNumber');
+const buyTourModalPhoneNumberInput = document.querySelector('#buyTourPhoneNumber');
+const buyTourModalEmailInput = document.querySelector('#buyTourEmail');
 const buyTourModalCLoseButton = document.querySelector('.buy-tour-modal__close-button');
 const buyTourModalOverlayElement = document.querySelector('.buy-tour-modal__overlay');
 const buyTourModalOpenButtons = document.querySelectorAll('.buy-tour-modal-open-button');
@@ -107,7 +108,11 @@ const onOpenBuyTourModal = (evt) => {
   evt.preventDefault();
   buyTourModalElement.classList.remove('hidden');
   document.addEventListener('keydown', onKeyDownBuyTourModal);
-  buyTourModalTelephoneInput.focus();
+  buyTourModalPhoneNumberInput.focus();
+  if (isLocalStorageSupport) {
+    buyTourModalPhoneNumberInput.value = localStorage.getItem('userPhoneNumber');
+    buyTourModalEmailInput.value = localStorage.getItem('userEmail');
+  }
 };
 
 const onCloseBuyTourModal = () => {
@@ -148,7 +153,6 @@ const onTabClick = (evt) => {
   tabsEnabled();
   evt.target.disabled = true;
 
-  console.log(evt.target.id.toString().substr(12));
   showCountryCard(evt.target.id.toString().substr(12));
 };
 
@@ -236,16 +240,37 @@ const onCallUsEmailInputChange = () => {
 const onSubmtiCallUsForm = (evt) => {
   evt.preventDefault();
   if (validateSubmitCallUsForm()) {
+    if (isLocalStorageSupport) {
+      localStorage.setItem('userPhoneNumber', callUsPhoneNumberInput.value);
+      if (callUsEmailInput.value !== '') {
+        localStorage.setItem('userEmail', callUsEmailInput.value);
+      }
+    }
     clearCallUsForm();
     showFeedbackModal();
   }
 };
 
-callUsPhoneNumberInput.addEventListener('input', onCallUsPhoneNumberInputChange);
-callUsEmailInput.addEventListener('input', onCallUsEmailInputChange);
-callUsFormSubmitButton.addEventListener('click', onSubmtiCallUsForm);
-callUsFormElement.addEventListener('submit', onSubmtiCallUsForm);
-callUsFormFeedbackCloseButton.addEventListener('click', hideSubmitCallUsFormFeedback);
+if (callUsPhoneNumberInput) {
+  callUsPhoneNumberInput.addEventListener('input', onCallUsPhoneNumberInputChange);
+}
+
+if (callUsEmailInput) {
+  callUsEmailInput.addEventListener('input', onCallUsEmailInputChange);
+}
+
+if (callUsFormSubmitButton) {
+  callUsFormSubmitButton.addEventListener('click', onSubmtiCallUsForm);
+}
+
+if (callUsFormElement) {
+  callUsFormElement.addEventListener('submit', onSubmtiCallUsForm);
+}
+
+if (callUsFormFeedbackCloseButton) {
+  callUsFormFeedbackCloseButton.addEventListener('click', hideSubmitCallUsFormFeedback);
+}
+
 
 // buy tour form
 
@@ -285,13 +310,43 @@ const onBuyTourFormEmailInputChange = () => {
 const onSubmitBuyTourForm = (evt) => {
   evt.preventDefault();
   if (validateBuyTourForm()) {
-    clearBuyTourForm();
+    if (isLocalStorageSupport) {
+      localStorage.setItem('userPhoneNumber', buyTourFormPhoneNumberInput.value);
+      if (buyTourFormEmailInput.value !== '') {
+        localStorage.setItem('userEmail', buyTourFormEmailInput.value);
+      }
+    }
     onCloseBuyTourModal();
     showFeedbackModal();
   }
 };
 
-buyTourFormEmailInput.addEventListener('input', onBuyTourFormEmailInputChange);
-buyTourFormPhoneNumberInput.addEventListener('input', onBuyTourFormPhoneNumberInputChange);
-buyTourFormSubmitButton.addEventListener('click', onSubmitBuyTourForm);
-buyTourFormElement.addEventListener('click', onSubmitBuyTourForm);
+if (buyTourFormEmailInput) {
+  buyTourFormEmailInput.addEventListener('input', onBuyTourFormEmailInputChange);
+}
+
+if (buyTourFormPhoneNumberInput) {
+  buyTourFormPhoneNumberInput.addEventListener('input', onBuyTourFormPhoneNumberInputChange);
+}
+
+if (buyTourFormSubmitButton) {
+  buyTourFormSubmitButton.addEventListener('click', onSubmitBuyTourForm);
+}
+
+if (buyTourFormElement) {
+  buyTourFormElement.addEventListener('click', onSubmitBuyTourForm);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  onCloseHeadMenu();
+  try {
+    callUsPhoneNumberInput.value = localStorage.getItem('userPhoneNumber');
+    callUsEmailInput.value = localStorage.getItem('userEmail');
+    isLocalStorageSupport = true;
+
+
+  } catch(error) {
+    console.log('Local Storage isn\'t available: ' + error);
+    isLocalStorageSupport = false;
+  }
+});
