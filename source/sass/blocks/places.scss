@@ -253,9 +253,11 @@
 
   .places__list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
     margin: 0;
+    margin-left: -20px;
     padding: 0;
 
     list-style: none;
@@ -263,6 +265,7 @@
 
   .places__item {
     margin-bottom: 30px;
+    margin-left: 20px;
   }
 
   .places__link {

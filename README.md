@@ -10,3 +10,6 @@
 - [Справочник решений ver. 1](https://www.notion.so/ver-1-589143c4d7e84ac4a1a470c817e3d259)
 - [Админка проектов](https://www.notion.so/b70bec4c36684360bc7e87b8f807cc7d)
 
+Для полной сборки (с конвертацией графики) npm run build
+
+Для работы с готовой графикой npm run dev-start

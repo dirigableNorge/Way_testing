@@ -3,6 +3,7 @@
 }
 
 .contacts__title {
+  width: 100%;
   margin: 0;
   margin-bottom: 20px;
 
@@ -70,5 +71,9 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-left: 0;
+  }
+
+  .contacts__title {
+    text-align: center;
   }
 }
