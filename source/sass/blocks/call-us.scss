@@ -11,6 +11,10 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: auto 100%;
+
+    @media (min-resolution: $min-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/callUsBackground2x.jpg");
+    }
   }
 
   .call-us__form {
@@ -136,6 +140,10 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;
+
+    @media (min-resolution: $min-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/callUsBackground2x.jpg");
+    }
   }
 
   .call-us__form {
