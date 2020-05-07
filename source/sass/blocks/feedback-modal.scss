@@ -1,0 +1,29 @@
+.feedback-modal__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 728px;
+  height: 444px;
+  padding: 5%;
+}
+
+.feedback-modal-message {
+  max-width: 400px;
+
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 43px;
+  text-align: center;
+  color: $dark-new;
+}
+
+@media (max-width: $tablet-width - 1) {
+  .feedback-modal__wrapper {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+}

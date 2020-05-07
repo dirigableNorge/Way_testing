@@ -6,6 +6,10 @@
   background-image: url("../img/counties__background.jpg");
   background-repeat: no-repeat;
   background-position: center top 200px;
+
+  @media (min-resolution: $min-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/counties__background2x.jpg");
+  }
 }
 
 @media (max-width: $desktop-width - 1) {

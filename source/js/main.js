@@ -26,6 +26,31 @@ window.onload = () => {
   onCloseHeadMenu();
 };
 
+// feedback modal
+
+const feedbackModalElement = document.querySelector('.feedback-modal');
+const feedbackModalCloseButton = feedbackModalElement.querySelectorAll('.feedback-modal__close-button');
+const feedbackModalOverlayElement = feedbackModalElement.querySelectorAll('.feedback-modal__overlay');
+
+const showFeedbackModal = () => {
+  feedbackModalElement.classList.remove('hidden');
+  document.addEventListener('keydown', onKeyDownFeedbackModal);
+}
+
+const hideFeedbackModal = () => {
+  feedbackModalElement.classList.add('hidden');
+  document.removeEventListener('keydown', onKeyDownFeedbackModal);
+}
+
+const onKeyDownFeedbackModal = (evt) => {
+  if (evt.key === 'Escape') {
+    hideFeedbackModal();
+  }
+};
+
+feedbackModalCloseButton.addEventListener('click', hideFeedbackModal);
+feedbackModalOverlayElement.addEventListener('click', hideFeedbackModal);
+
 // modal
 
 const buyTourModalElement = document.querySelector('.buy-tour-modal');
@@ -37,19 +62,19 @@ const buyTourModalOpenButtons = document.querySelectorAll('.buy-tour-modal-open-
 const onOpenBuyTourModal = (evt) => {
   evt.preventDefault();
   buyTourModalElement.classList.remove('hidden');
-  document.addEventListener('keydown', onKeyDown);
+  document.addEventListener('keydown', onKeyDownBuyTourModal);
   buyTourModalTelephoneInput.focus();
 };
 
-const onKeyDown = (evt) => {
+const onKeyDownBuyTourModal = (evt) => {
   if (evt.key === 'Escape') {
     onCloseBuyTourModal();
-    document.removeEventListener('keydown', onKeyDown);
-  }
 };
 
 const onCloseBuyTourModal = () => {
   buyTourModalElement.classList.add('hidden');
+  document.removeEventListener('keydown', onKeyDownBuyTourModal);
+}
 };
 
 if (buyTourModalCLoseButton) {

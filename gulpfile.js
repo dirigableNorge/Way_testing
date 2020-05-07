@@ -9,6 +9,10 @@ const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 const htmlmin = require('gulp-htmlmin');
 const uglify = require('gulp-uglify-es').default;
+const imagemin = require('gulp-imagemin');
+const realimagemin = require('imagemin');
+const imageminWebp = require('imagemin-webp');
+const webp = require('gulp-webp');
 const svgo = require('gulp-svgo');
 const svgstore = require('gulp-svgstore');
 const rename = require('gulp-rename');
@@ -56,7 +60,6 @@ gulp.task('copy', function() {
   return gulp
     .src(
       [
-        'source/img/**/*{png,jpg}',
         'source/fonts/**/*.{woff,woff2}',
         'source/*.ico'
       ],
@@ -67,7 +70,34 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('html', function() {
+gulp.task('images', () => {
+  return gulp
+    .src('source/img/**/*{png,jpg}')
+    .pipe(
+      imagemin([
+        imagemin.optipng({ optimizationLevel: 3 }),
+        imagemin.mozjpeg({ progressive: true }),
+      ])
+    )
+    .pipe(gulp.dest('build/img'));
+});
+
+gulp.task('webp', () =>  {
+  return gulp
+    .src('source/img/**/*.{jpg}')
+    .pipe(webp({ quality: 90 }))
+    .pipe(gulp.dest('build/img'));
+});
+
+gulp.task('imagemin-webp', async () => {
+  await imagemin(['source/img/*.{jpg}'], 'build/img', {
+		use: [
+			imageminWebp({quality: 90})
+		]
+	});
+})
+
+gulp.task('html', () => {
   return gulp
     .src('source/*.html')
     .pipe(posthtml([include()]))
@@ -113,7 +143,7 @@ gulp.task('server', () => {
   gulp.watch("source/js/*.js", gulp.series('js-min', 'refresh'));
 });
 
-gulp.task('build', gulp.series('clean', 'copy', 'css', 'css-min', 'js-min', 'svgo', 'svg-sprite', 'html'));
+gulp.task('build', gulp.series('clean', 'copy', 'css', 'css-min', 'js-min', 'images', 'webp', 'svgo', 'svg-sprite', 'html'));
 gulp.task('start', gulp.series('build', 'server'));
 
 
