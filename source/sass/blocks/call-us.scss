@@ -159,7 +159,7 @@
   }
 
   .call-us__title {
-    flex-grow: 1;
+    width: 100%;
     margin: 0;
     margin-bottom: 15px;
 
@@ -171,14 +171,19 @@
   }
 
   .call-us__tip {
-    flex-grow: 1;
     display: block;
+    width: 100%;
     margin: 0;
     margin-bottom: 25px;
 
     line-height: 24px;
     text-align: center;
     color: $really-dark;
+  }
+
+  .call-us__fieldset {
+    display: flex;
+    width: 100%;
   }
 
   .call-us__label-required {
