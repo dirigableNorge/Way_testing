@@ -1,3 +1,42 @@
+//utils
+const addInvalidInputState = (inputElement) => {
+  inputElement.classList.add('input-text-invalid')
+};
+
+const removeInvalidInputState = (inputElement) => {
+  inputElement.classList.remove('input-text-invalid')
+};
+
+const emailValidation = (email, isRequired) => {
+  if (isRequired && email.value === "") {
+    return false;
+  } else if (!isRequired && email.value === "") {
+    return true;
+  }
+
+  if (/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(email.value)) {
+    return true;
+  }
+
+  return false;
+};
+
+const phoneNumberValidation = (phoneNumber, isRequired) => {
+  if (isRequired && phoneNumber.value === "") {
+
+    return false;
+
+  } else if (!isRequired && phoneNumber.value === "") {
+    return true;
+  }
+
+  if (/^[0-9]{10}$/.test(phoneNumber.value)) {
+    return true;
+  }
+
+  return false;
+};
+
 //menu
 
 const headMenuElement = document.querySelector('.page-header__nav-list');
@@ -29,8 +68,8 @@ window.onload = () => {
 // feedback modal
 
 const feedbackModalElement = document.querySelector('.feedback-modal');
-const feedbackModalCloseButton = feedbackModalElement.querySelectorAll('.feedback-modal__close-button');
-const feedbackModalOverlayElement = feedbackModalElement.querySelectorAll('.feedback-modal__overlay');
+const feedbackModalCloseButton = feedbackModalElement.querySelector('.feedback-modal__close-button');
+const feedbackModalOverlayElement = feedbackModalElement.querySelector('.feedback-modal__overlay');
 
 const showFeedbackModal = () => {
   feedbackModalElement.classList.remove('hidden');
@@ -48,13 +87,18 @@ const onKeyDownFeedbackModal = (evt) => {
   }
 };
 
-feedbackModalCloseButton.addEventListener('click', hideFeedbackModal);
-feedbackModalOverlayElement.addEventListener('click', hideFeedbackModal);
+if(feedbackModalCloseButton) {
+  feedbackModalCloseButton.addEventListener('click', hideFeedbackModal);
+}
+
+if(feedbackModalOverlayElement) {
+  feedbackModalOverlayElement.addEventListener('click', hideFeedbackModal);
+}
 
 // modal
 
 const buyTourModalElement = document.querySelector('.buy-tour-modal');
-const buyTourModalTelephoneInput = document.querySelector('#buyTourTelephone');
+const buyTourModalTelephoneInput = document.querySelector('#buyTourPhoneNumber');
 const buyTourModalCLoseButton = document.querySelector('.buy-tour-modal__close-button');
 const buyTourModalOverlayElement = document.querySelector('.buy-tour-modal__overlay');
 const buyTourModalOpenButtons = document.querySelectorAll('.buy-tour-modal-open-button');
@@ -66,15 +110,15 @@ const onOpenBuyTourModal = (evt) => {
   buyTourModalTelephoneInput.focus();
 };
 
-const onKeyDownBuyTourModal = (evt) => {
-  if (evt.key === 'Escape') {
-    onCloseBuyTourModal();
-};
-
 const onCloseBuyTourModal = () => {
   buyTourModalElement.classList.add('hidden');
   document.removeEventListener('keydown', onKeyDownBuyTourModal);
 }
+
+const onKeyDownBuyTourModal = (evt) => {
+  if (evt.key === 'Escape') {
+      onCloseBuyTourModal();
+  };
 };
 
 if (buyTourModalCLoseButton) {
@@ -128,7 +172,6 @@ const showCountryCard = (id) => {
   card.classList.remove('hidden');
 };
 
-
 //places card
 
 const placesCardsElements = document.querySelectorAll('.places__link');
@@ -148,15 +191,22 @@ placesCardsElements.forEach((card) => {
 
 const callUsFormElement = document.querySelector('.call-us__form');
 const callUsFormFeedbackElement = callUsFormElement.querySelector('.call-us__feedback');
+const callUsPhoneNumberInput = callUsFormElement.querySelector('#callUsPhoneNumber');
+const callUsEmailInput = callUsFormElement.querySelector('#callUsEmail');
 const callUsFormFeedbackCloseButton = callUsFormElement.querySelector('.call-us__close-button-icon');
 const callUsFormSubmitButton = callUsFormElement.querySelector('.call-us__submit-button');
 
 const validateSubmitCallUsForm = () => {
-  return true;
+  if (phoneNumberValidation(callUsPhoneNumberInput, true) && emailValidation(callUsEmailInput, false)) {
+    return true;
+  }
+
+  return false;
 };
 
 const clearCallUsForm = () => {
-
+  callUsPhoneNumberInput.value = '';
+  callUsEmailInput.value = '';
 };
 
 const showSubmitCallUsFormFeedback = () => {
@@ -167,13 +217,32 @@ const hideSubmitCallUsFormFeedback = () => {
   callUsFormFeedbackElement.classList.add('hidden');
 };
 
-const onSubmtiCallUsForm = (evt) => {
-  evt.preventDefault();
-  if (validateSubmitCallUsForm()) {
-    showSubmitCallUsFormFeedback();
+const onCallUsPhoneNumberInputChange = () => {
+  if (!phoneNumberValidation(callUsPhoneNumberInput, true)) {
+    addInvalidInputState(callUsPhoneNumberInput);
+  } else {
+    removeInvalidInputState(callUsPhoneNumberInput);
   }
 };
 
+const onCallUsEmailInputChange = () => {
+  if (!emailValidation(callUsEmailInput, true)) {
+    addInvalidInputState(callUsEmailInput);
+  } else {
+    removeInvalidInputState(callUsEmailInput);
+  }
+};
+
+const onSubmtiCallUsForm = (evt) => {
+  evt.preventDefault();
+  if (validateSubmitCallUsForm()) {
+    clearCallUsForm();
+    showFeedbackModal();
+  }
+};
+
+callUsPhoneNumberInput.addEventListener('input', onCallUsPhoneNumberInputChange);
+callUsEmailInput.addEventListener('input', onCallUsEmailInputChange);
 callUsFormSubmitButton.addEventListener('click', onSubmtiCallUsForm);
 callUsFormElement.addEventListener('submit', onSubmtiCallUsForm);
 callUsFormFeedbackCloseButton.addEventListener('click', hideSubmitCallUsFormFeedback);
@@ -181,33 +250,48 @@ callUsFormFeedbackCloseButton.addEventListener('click', hideSubmitCallUsFormFeed
 // buy tour form
 
 const buyTourFormElement = document.querySelector('.buy-tour-modal__form');
-const buyTourFormFeedbackElement = document.querySelector('.buy-tour-modal__feedback');
-const buyTourFormFeedbackCloseButton = document.querySelector('.buy-tour-modal__feedback-close-button');
+const buyTourFormPhoneNumberInput = buyTourFormElement.querySelector('#buyTourPhoneNumber');
+const buyTourFormEmailInput = buyTourFormElement.querySelector('#buyTourEmail');
 const buyTourFormSubmitButton = buyTourFormElement.querySelector('.buy-tour-modal__submit-button');
 
 const validateBuyTourForm = () => {
-  return true;
+  if (phoneNumberValidation(buyTourFormPhoneNumberInput, true) && emailValidation(buyTourFormEmailInput, false)) {
+    return true;
+  }
+  return false;
 };
 
 const clearBuyTourForm = () => {
-
+  buyTourFormPhoneNumberInput.value = "";
+  buyTourFormEmailInput.value = "";
 };
 
-const showBuyTourFormFeedback = () => {
-  buyTourFormFeedbackElement.classList.remove('hidden');
+const onBuyTourFormPhoneNumberInputChange = () => {
+  if (!phoneNumberValidation(buyTourFormPhoneNumberInput, true)) {
+    addInvalidInputState(buyTourFormPhoneNumberInput);
+  } else {
+    removeInvalidInputState(buyTourFormPhoneNumberInput);
+  }
 };
 
-const hideBuyTourFormFeedback = () => {
-  buyTourFormFeedbackElement.classList.add('hidden');
+const onBuyTourFormEmailInputChange = () => {
+  if (!emailValidation(buyTourFormEmailInput, false)) {
+    addInvalidInputState(buyTourFormEmailInput);
+  } else {
+    removeInvalidInputState(buyTourFormEmailInput);
+  }
 };
 
 const onSubmitBuyTourForm = (evt) => {
   evt.preventDefault();
-  if(validateBuyTourForm()) {
-    showBuyTourFormFeedback();
+  if (validateBuyTourForm()) {
+    clearBuyTourForm();
+    onCloseBuyTourModal();
+    showFeedbackModal();
   }
-}
+};
 
+buyTourFormEmailInput.addEventListener('input', onBuyTourFormEmailInputChange);
+buyTourFormPhoneNumberInput.addEventListener('input', onBuyTourFormPhoneNumberInputChange);
 buyTourFormSubmitButton.addEventListener('click', onSubmitBuyTourForm);
 buyTourFormElement.addEventListener('click', onSubmitBuyTourForm);
-buyTourFormFeedbackCloseButton.addEventListener('click', hideBuyTourFormFeedback);

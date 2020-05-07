@@ -53,12 +53,16 @@
   }
 }
 
-.input-tex:invalid {
+.input-text-invalid {
   border-color: $main-accent;
 }
 
 .input-text-invalid + .input-label {
   position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
 
   &::before {
     content: "Данные не верны";

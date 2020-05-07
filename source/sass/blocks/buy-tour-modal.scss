@@ -74,56 +74,6 @@
     cursor: pointer;
   }
 
-  .buy-tour-modal__feedback {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 150;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-
-    background-color: $background-grey;
-  }
-
-  .buy-tour-modal__feedback-message {
-    max-width: 400px;
-
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 43px;
-    text-align: center;
-    color: $dark-new;
-  }
-
-  .buy-tour-modal__feedback-close-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 151;
-
-    padding: 0;
-
-    font-size: 0;
-    line-height: 0;
-
-    border: 0 none;
-    background-color: transparent;
-
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      .buy-tour-modal__close-button-icon {
-        fill: none;
-        stroke: $really-dark;
-      }
-    }
-  }
-
   .buy-tour-modal__close-button-icon {
     fill: none;
     stroke: rgba($really-dark, 0.2);

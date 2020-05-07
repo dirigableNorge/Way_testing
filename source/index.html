@@ -346,15 +346,17 @@
           <small class="call-us__tip">Оставьте свой номер или e-mail и мы свяжемся с Вами</small>
           <div class="call-us__fieldset">
             <div class="input-wrapper">
-              <input class="input-text input-text--phone call-us__input" type="text" placeholder=" Введите 10 цифр номера" id="callUsTelephone" required>
-              <label class="input-label call-us__label" for="callUsTelephone">
+              <input class="input-text input-text--phone call-us__input" type="text" placeholder=" Введите 10 цифр номера" id="callUsPhoneNumber" pattern="[0-9]{10}" required>
+              <label class="input-label call-us__label" for="callUsPhoneNumber">
                 <span class="visually-hidden">Телефон</span>
               </label>
             </div>
-            <input class="input-text call-us__input" type="text" placeholder="E-mail" id="callUsEmail">
-            <label class="input-label call-us__label" for="callUsEmail">
-              <span class="visually-hidden">Электронная почта</span>
-            </label>
+            <div class="input-wrapper">
+              <input class="input-text call-us__input" type="text" placeholder="E-mail" id="callUsEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <label class="input-label call-us__label" for="callUsEmail">
+                <span class="visually-hidden">Электронная почта</span>
+              </label>
+            </div>
           </div>
           <button class="button call-us__submit-button" type="button">отправить</button>
           <div class="call-us__feedback hidden">
@@ -427,26 +429,19 @@
       <form action="" class="buy-tour-modal__form" method="POST">
         <h2 class="buy-tour-modal__title">Купить тур</h2>
         <div class="input-wrapper">
-          <input class="input-text input-text--phone buy-tour-modal__input" type="text" placeholder="Введите 10 цифр номера" id="buyTourTelephone" required>
-          <label class="input-label buy-tour-modal__label" for="buyTourTelephone">
+          <input class="input-text input-text--phone buy-tour-modal__input" type="text" placeholder="Введите 10 цифр номера" id="buyTourPhoneNumber" pattern="[0-9]{10}" required>
+          <label class="input-label buy-tour-modal__label" for="buyTourPhoneNumber">
             <span class="visually-hidden">Телефон</span>
           </label>
         </div>
-        <input class="input-text buy-tour-modal__input" type="text" placeholder="E-mail" id="buyTourEmail">
-        <label class="buy-tour-modal__label visually-hidden" for="buyTourEmail">
-          <span class="visually-hidden">Электронная почта</span>
-        </label>
+        <div class="input-wrapper">
+          <input class="input-text buy-tour-modal__input" type="text" placeholder="E-mail" id="buyTourEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          <label class="input-label buy-tour-modal__label" for="buyTourEmail">
+            <span class="visually-hidden">Электронная почта</span>
+          </label>
+        </div>
         <button class="button buy-tour-modal__submit-button">отправить</button>
       </form>
-      <div class="buy-tour-modal__feedback hidden">
-        <button class="buy-tour-modal__feedback-close-button" type="button">
-          <svg class="buy-tour-modal__close-button-icon" width="22" height="22" viewBox="0 0 24 25">
-            <use xlink:href="#icon-cross-close"></use>
-          </svg>
-          Close
-        </button>
-        <p class="buy-tour-modal__feedback-message">Форма успешно отправлена, спасибо! :)</p>
-      </div>
     </div>
   </article>
   <article class="modal feedback-modal hidden">
