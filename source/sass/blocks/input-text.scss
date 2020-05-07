@@ -78,3 +78,9 @@
     color: $main-accent;
   }
 }
+
+@media (max-width: $tablet-width - 1) {
+  .input-wrapper {
+    width: 100%;
+  }
+}

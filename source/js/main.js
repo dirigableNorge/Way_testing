@@ -338,7 +338,10 @@ if (buyTourFormElement) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  const pageHeader = document.querySelector('.page-header');
+  pageHeader.classList.remove('page-header--withoutjs');
   onCloseHeadMenu();
+
   try {
     callUsPhoneNumberInput.value = localStorage.getItem('userPhoneNumber');
     callUsEmailInput.value = localStorage.getItem('userEmail');
