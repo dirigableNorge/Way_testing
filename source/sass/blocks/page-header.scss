@@ -273,13 +273,13 @@
     color: white;
 
     background-color: black;
-    background-image: url("../img/header-background.jpg");
+    background-image: url("../img/header-background-tablet.jpg");
     background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
 
     @media (min-resolution: $min-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/header-background2x.jpg");
+      background-image: url("../img/header-background-tablet2x.jpg");
     }
   }
 
@@ -474,13 +474,13 @@
   }
 
   .page-header__bottom {
-    background-image: url("../img/header-background.jpg"), linear-gradient(black, black);
+    background-image: url("../img/header-background-mobile.jpg"), linear-gradient(black, black);
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100% 235px;
 
     @media (min-resolution: $min-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/header-background2x.jpg"), linear-gradient(black, black);
+      background-image: url("../img/header-background-mobile2x.jpg"), linear-gradient(black, black);
     }
   }
 
