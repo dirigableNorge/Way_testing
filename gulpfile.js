@@ -10,8 +10,6 @@ const include = require('posthtml-include');
 const htmlmin = require('gulp-htmlmin');
 const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
-const realimagemin = require('imagemin');
-const imageminWebp = require('imagemin-webp');
 const webp = require('gulp-webp');
 const svgo = require('gulp-svgo');
 const svgstore = require('gulp-svgstore');
@@ -88,14 +86,6 @@ gulp.task('webp', () =>  {
     .pipe(webp({ quality: 90 }))
     .pipe(gulp.dest('build/img'));
 });
-
-gulp.task('imagemin-webp', async () => {
-  await imagemin(['source/img/*.{jpg}'], 'build/img', {
-		use: [
-			imageminWebp({quality: 90})
-		]
-	});
-})
 
 gulp.task('html', () => {
   return gulp

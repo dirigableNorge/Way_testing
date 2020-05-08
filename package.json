@@ -44,8 +44,6 @@
     "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^2.0.0",
     "gulp-webp": "^4.0.1",
-    "imagemin": "^7.0.1",
-    "imagemin-webp": "^5.1.0",
     "posthtml-include": "^1.4.3",
     "stylelint": "^13.3.3",
     "stylelint-config-htmlacademy": "^0.1.4"
