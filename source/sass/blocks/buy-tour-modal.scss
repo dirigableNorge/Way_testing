@@ -66,6 +66,11 @@
   .buy-tour-modal__input {
     width: 270px;
     margin-bottom: 20px;
+
+    &:hover,
+    &:focus {
+      border-color: rgba($dark, 0.7);
+    }
   }
 
   .buy-tour-modal__submit-button {

@@ -65,6 +65,11 @@
     &:not(:nth-child(2n)) {
       margin-right: 19px;
     }
+
+    &:hover,
+    &:focus {
+      border-color: rgba($dark, 0.7);
+    }
   }
 
   .call-us__submit-button {
