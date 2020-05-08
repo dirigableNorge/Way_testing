@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Way: Путешествие по Европе</title>
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="preload" href="fonts/montserrat-v14-latin_cyrillic-regular.woff2">
-  <link rel="preload" href="fonts//montserrat-v14-latin_cyrillic-500.woff2">
-  <link rel="preload" href="fonts//montserrat-v14-latin_cyrillic-600.woff2">
-  <link rel="preload" href="fonts//montserrat-v14-latin_cyrillic-700.woff2">
+  <link rel="preload" as="font" href="fonts/montserrat-v14-latin_cyrillic-regular.woff2">
+  <link rel="preload" as="font" href="fonts//montserrat-v14-latin_cyrillic-500.woff2">
+  <link rel="preload" as="font" href="fonts//montserrat-v14-latin_cyrillic-600.woff2">
+  <link rel="preload" as="font" href="fonts//montserrat-v14-latin_cyrillic-700.woff2">
 </head>
 <body>
   <div style="display: none;">
@@ -122,19 +122,19 @@
           <h2 class="countries__title visually-hidden">Каталог стран</h2>
           <ul class="tabs countries__tabs">
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab1" type="buton" disabled>Греция</button>
+              <button class="tabs__button" id="countriesTab1" type="button" disabled>Греция</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab2" type="buton">Албания</button>
+              <button class="tabs__button" id="countriesTab2" type="button">Албания</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab3" type="buton">Македония</button>
+              <button class="tabs__button" id="countriesTab3" type="button">Македония</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab4" type="buton">Черногория</button>
+              <button class="tabs__button" id="countriesTab4" type="button">Черногория</button>
             </li>
             <li class="tabs__item">
-              <button class="tabs__button" id="countriesTab5" type="buton">Хорватия</button>
+              <button class="tabs__button" id="countriesTab5" type="button">Хорватия</button>
             </li>
           </ul>
           <ul class="countries__list">
@@ -341,8 +341,8 @@
     <section class="page-main__call-us call-us">
       <h2 class="visually-hidden">Обратная связь</h2>
       <div class="wrapper call-us__wrapper">
-        <form action="" class="call-us__form" method="POST" id="call-us">
-          <legend class="call-us__title">У Вас остались вопросы?</legend>
+        <form action="#" class="call-us__form" method="POST" id="call-us">
+          <h3 class="call-us__title">У Вас остались вопросы?</h3>
           <small class="call-us__tip">Оставьте свой номер или e-mail и мы свяжемся с Вами</small>
           <div class="call-us__fieldset">
             <div class="input-wrapper">
@@ -426,7 +426,7 @@
         </svg>
         Close
       </button>
-      <form action="" class="buy-tour-modal__form" method="POST">
+      <form action="#" class="buy-tour-modal__form" method="POST">
         <h2 class="buy-tour-modal__title">Купить тур</h2>
         <div class="input-wrapper">
           <input class="input-text input-text--phone buy-tour-modal__input" type="text" placeholder="Введите 10 цифр номера" id="buyTourPhoneNumber" pattern="[0-9]{10}" required>
@@ -445,6 +445,7 @@
     </div>
   </article>
   <article class="modal feedback-modal hidden">
+    <h2 class="visually-hidden">Информационное сообщение</h2>
     <div class="modal__overlay feedback-modal__overlay"></div>
     <div class="modal__wrapper feedback-modal__wrapper">
       <button class="modal__close-button feedback-modal__close-button" type="button">
