@@ -5,9 +5,11 @@
 
   .page-header__top-wrapper {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 
     max-width: 1200px;
+    width: 100%;
     padding-left: 1.25%;
     padding-right: 1.25%;
     margin: 0 auto;
@@ -16,7 +18,7 @@
   }
 
   .page-header__logo {
-    margin-right: auto;
+    margin-right: 40px;
 
     line-height: 0;
   }
@@ -32,8 +34,12 @@
     display: none;
   }
 
+  .page-header__nav {
+    margin-left: auto;
+  }
   .page-header__nav-list {
     display: flex;
+    flex-wrap: wrap;
 
     margin: 0;
     padding: 0;

@@ -56,15 +56,14 @@
 
   .call-us__fieldset {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .call-us__input {
-    width: 269px;
     margin-bottom: 25px;
-
-    &:not(:nth-child(2n)) {
-      margin-right: 19px;
-    }
+    width: 268px;
 
     &:hover,
     &:focus {
@@ -188,6 +187,8 @@
 
   .call-us__fieldset {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
   }
 
@@ -205,12 +206,8 @@
   }
 
   .call-us__input {
-    width: 269px;
+    width: 268px;
     margin-bottom: 25px;
-
-    &:not(:nth-child(2n)) {
-      margin-right: 19px;
-    }
   }
 
   .call-us__submit-button {
