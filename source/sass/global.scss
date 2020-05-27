@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  color: black;
+
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+}
