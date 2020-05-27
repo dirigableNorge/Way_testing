@@ -1,8 +1,8 @@
-.input-wrapper {
+.input-block {
   position: relative;
 }
 
-.input-text {
+.input-block__text {
   padding: 15px;
 
   font-size: 14px;
@@ -18,7 +18,7 @@
   }
 }
 
-.input-text:required {
+.input-block__text:required {
   padding-left: 26px;
 
   background-image: url("../img/icon-star.svg");
@@ -27,12 +27,12 @@
   background-position: 15px 7px;
 }
 
-.input-text--phone,
-.input-text:required.input-text--phone {
+.input-block__text--phone,
+.input-block__text:required.input-block__text--phone {
   padding-left: 51px;
 }
 
-.input-text--phone + .input-label {
+.input-block__text--phone + .input-block__label {
   position: absolute;
   top: 0;
   left: 0;
@@ -53,11 +53,11 @@
   }
 }
 
-.input-text-invalid {
+.input-block__text-invalid {
   border-color: $main-accent;
 }
 
-.input-text-invalid + .input-label {
+.input-block__text-invalid + .input-block__label {
   position: absolute;
   top: 0;
   left: 0;
@@ -80,7 +80,7 @@
 }
 
 @media (max-width: $tablet-width - 1) {
-  .input-wrapper {
+  .input-block {
     width: 100%;
   }
 }
