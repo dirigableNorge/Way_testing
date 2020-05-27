@@ -120,7 +120,7 @@ gulp.task('server', () => {
     notify: false,
     open: true,
     cors: true,
-    ui: false
+    ui: 8888
   });
 
   gulp.task('refresh', (done) => {
