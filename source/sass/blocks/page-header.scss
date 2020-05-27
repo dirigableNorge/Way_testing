@@ -349,6 +349,22 @@
       background-color: transparent;
     }
   }
+
+  .page-header--withoutjs {
+    .page-header__nav-close-button {
+      display: none;
+    }
+
+    .page-header__nav-list {
+      flex-direction: row;
+      padding-top: 0;
+    }
+
+    .page-header__nav-item {
+      margin: 0;
+      margin-right: 10px;
+    }
+  }
 }
 
 @media (max-width: $tablet-width - 1) {
